@@ -1,0 +1,16 @@
+#menu-section{
+    margin: 0;
+    background-color: aqua;
+    height: 50px;
+}
+.menu-button-div{
+    padding-top: 0.5%;
+    height: 30px;
+    position: relative;
+}
+#logout-div{
+    float: right;
+}
+#playlist-div{
+    float: right;
+}

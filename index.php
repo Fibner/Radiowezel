@@ -11,9 +11,18 @@ if(!isset($_SESSION['admin']) || !$_SESSION['admin']){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="src/css/index-page.css">
     <title>Document</title>
 </head>
 <body>
+    <div id="menu-section">
+        <div id="playlist-div" class="menu-button-div">
+            <button id="playlist-button">Playlista</button>
+        </div>
+        <div id="logout-div" class="menu-button-div">
+            <button id="logout-button">Wyloguj</button>
+        </div>
+    </div>
     <table id="musicList">
         <tr>
             <th>URL</th>
@@ -40,8 +49,6 @@ if(!isset($_SESSION['admin']) || !$_SESSION['admin']){
              $db ->close();
         ?>
     </table>
-    <button id="musicPlayer">Odtwarzacz muzyki</button>
-    <button id="logout-button">Wyloguj</button>
     <script src="src/js/jquery-3.6.0.js"></script>
     <script src="src/js/index-page.js"></script>
 </body>

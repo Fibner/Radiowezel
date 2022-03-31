@@ -1,6 +1,6 @@
 window.onload = function(){
     document.querySelector("#logout-button").addEventListener("click", logOut);
-    document.querySelector("#musicPlayer").addEventListener("click", musicPlayer);
+    // document.querySelector("#musicPlayer").addEventListener("click", musicPlayer);
 }
 
 function logOut(){
