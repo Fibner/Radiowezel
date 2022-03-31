@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_POST['admin']) && $_POST['admin']){
+if(isset($_SESSION['admin']) && $_SESSION['admin'] == true){
     header("Location: ../index");
 }
 ?>
@@ -13,14 +13,14 @@ if(isset($_POST['admin']) && $_POST['admin']){
     <title>Logowanie</title>
 </head>
 <body>
-    <form method="POST">
+    <form onsubmit="return false">
         <label for="login-input">Login</label>
         <input type="text" name="login-input" id="login-input">
         <br>
         <label for="password-input">Hasło</label>
         <input type="password" name="password-input" id="password-input">
         <br>
-        <button type="submit" id="submit">Zaloguj</button>
+        <button id="submit">Zaloguj</button>
     </form>
 
     <script src="../src/js/jquery-3.6.0.js"></script>
