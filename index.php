@@ -13,7 +13,9 @@ if(!isset($_SESSION['admin']) || !$_SESSION['admin']){
     <title>Document</title>
 </head>
 <body>
-    <button id="logout-button">Wyloguj</button>
+    <div id="menu-section">
+        <button id="logout-button">Wyloguj</button>
+    </div>
     <script src="src/js/jquery-3.6.0.js"></script>
     <script src="src/js/index-page.js"></script>
 </body>
