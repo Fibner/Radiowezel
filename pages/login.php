@@ -10,9 +10,15 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == true){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/css/login-page.css">
+    <script src="https://kit.fontawesome.com/9ec0aafe67.js" crossorigin="anonymous"></script>
     <title>Logowanie</title>
 </head>
 <body>
+    <section id="menu-section">
+
+    </section>
+    <section id="form-section">
     <form onsubmit="return false">
         <label for="login-input">Login</label>
         <input type="text" name="login-input" id="login-input">
@@ -22,8 +28,9 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == true){
         <br>
         <button id="submit">Zaloguj</button>
     </form>
+    </section>
 
     <script src="../src/js/jquery-3.6.0.js"></script>
-    <script src="../src/js/login-page.js"></script>
+    <script defer="true" type="module" src="../src/js/login-page.js"></script>
 </body>
 </html>
