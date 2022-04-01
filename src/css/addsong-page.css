@@ -1,17 +1,17 @@
-*{
+* {
     font-family: 'Press Start 2P', cursive;
     background-color: #312f31;
     color: white;
- 
+
 }
 
-#menu-section{
+#menu-section {
     margin-left: auto;
     margin-right: auto;
     height: 100px;
 }
 
-.Pbutton{
+.Pbutton {
     margin-top: 1%;
     float: right;
     cursor: pointer;
@@ -24,7 +24,7 @@
     margin-right: 1%;
 }
 
-.Wbutton{
+.Wbutton {
     margin-top: 1%;
     float: right;
     cursor: pointer;
@@ -37,24 +37,24 @@
     margin-right: 1%;
 }
 
-#link-div{
+#link-div {
     margin-top: 5%;
     text-align: center;
 }
 
-#link-input{
+#link-input {
     margin-top: 5%;
     text-align: center;
 }
 
-.lin{
+.lin {
     border: none;
-    background-color: #434355 ;
+    background-color: #434355;
     height: 42px;
     width: 500px;
 }
 
-.Lbutton{
+.Lbutton {
     cursor: pointer;
     background-color: #455065;
     color: white;
@@ -63,6 +63,6 @@
     border: none;
 }
 
-hr{
+hr {
     width: 50%;
 }

@@ -12,7 +12,7 @@ window.onload = function(){
 function logOut(){
     $.ajax({
         url: "php/logout",
-        type: "get",
+        type: "POST",
         success: function(){
             location.href = "index"
         }
