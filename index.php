@@ -22,21 +22,15 @@ if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
 
 <body>
     <div id="menu-section">
+        <div id="add-div" class="menu-button-div">
+            <input type="button" class="Pbutton" name="button" id="add-button" value="Dodaj" />
+        </div>
         <div id="playlist-div" class="menu-button-div">
-            <input type="button" class="Pbutton" name="button" value="Playlista" />
+            <input type="button" class="Pbutton" name="button" id="playlist-button" value="Playlista" />
         </div>
         <div id="logout-div" class="menu-button-div">
-            <input type="button" class="Wbutton" name="button" value="Wyloguj" />
+            <input type="button" class="Wbutton" name="button" id="logout-button" value="Wyloguj" />
         </div>
-    </div>
-
-    
-    <div id="link">
-        <br><br>
-        <h1>Dodaj piosenke do playlisty</h1>
-        <hr>
-        <input type="text" name="link" id="link"  class="lin">
-        <input type="button" class="Lbutton" name="button" value="Dodaj" />
     </div>
 
     <script src="src/js/jquery-3.6.0.js"></script>
