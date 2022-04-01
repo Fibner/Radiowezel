@@ -14,6 +14,7 @@ window.onload = function () {
             },
             success: function(data, string, xml){
                 console.log("Trying to login...");
+                console.log(xml.responseText);
                 if(xml.responseText == "false") return wrongData();
                 location.reload();
             },

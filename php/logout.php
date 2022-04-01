@@ -1,5 +1,5 @@
 <?php
-if($_GET){
+//  if($_GET){
     session_start();
     if(1==1){
         if(isset($_SESSION["admin"])){
@@ -8,5 +8,5 @@ if($_GET){
         }
     }
     
-    return json_encode(true);
-}
+    echo json_encode(true);
+//  }
