@@ -24,7 +24,7 @@ function alertbox(type,textmessage){
     background.id = "alertbox"
     document.body.appendChild(background);
     background.addEventListener("click", function(){
-        if($("#alertbox").css('opacity') == 1) $("#alertbox").animate({top: "-40%", opacity: "0%"},"slow",function(){background.remove();});
+        if($("#alertbox").css('opacity') == 1) $("#alertbox").animate({top: "40%", opacity: "0%"},"slow",function(){background.remove();});
     })
     $("#alertbox").animate({top: "0%", opacity: "100%"},"slow");
 }

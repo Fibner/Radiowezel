@@ -1,37 +1,35 @@
 <?php
-$_POST['link'] = "https://www.youtube.com/watch?v=2-xPNdkRJvk";
 if ($_POST) {
     session_start();
     require "dbconnection.php";
-    require "key.php";
+    require "Class/YoutubeAPI.php";
+    require "Class/DbRepo.php";
+    require "Class/Song.php";
 
     if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
         if (isset($_POST['link']) && $_POST['link'] != "") {
             $link = $_POST['link'];
             if (checkLink($link)) {
-                $songID = getID($link);
                 try{
-                    //NIE RUSZAĆ TU BO ŁAPSKA UTNE >:(
-                    $response = json_decode(file_get_contents("https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2Cstatistics&id={$songID}&key={$key}", true));
-                    echo $response;
-                    // foreach($response->items as $myitem){
-                    //     echo $item;
-                    // }
+                    $song = YoutubeAPI::getSongInfo($link);
+                    if($song->checkCategory()){
+                        if(DbRepo::addSong($song)){
+                            echo json_encode(true);
+                        }else{
+                            echo "err";
+                        };
+                    }else{
+                        echo "wrg";
+                    }
                 }catch(Exception $e){
-                    echo json_encode("err");
+                    echo "err";
+                    return;
                 }
-                // $db->query();
-
-
-
-                echo json_encode(true);
             } else {
                 echo json_encode(false);
-                return;
             }
         } else {
             echo json_encode(false);
-            return;
         }
     } else {
         session_destroy();
@@ -52,8 +50,4 @@ function checkLink(&$link)
         }
     }
     return false;
-}
-
-function getID($link){
-    return substr($link, -11);
 }

@@ -66,3 +66,8 @@
 hr {
     width: 50%;
 }
+
+body {
+    overflow-y: hidden; 
+    overflow-x: hidden; 
+}
