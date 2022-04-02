@@ -13,19 +13,22 @@ window.onload = function () {
                 },
                 success: function (data, string, xml) {
                     console.log("Sending song to playlist...");
-                    if (xml.responseText == "false") return alertModule.alertbox(0, "Nie poprawny link do youtube.");
+                    // console.log(xml.responseText);
+                    if (xml.responseText == "false"){
+                        return alertModule.alertbox(0, "Nie poprawny link do youtube.");
+                    }
 
-                    if (xml.responseText == true) {
+                    if(xml.responseText == "wrg"){
+                        return alertModule.alertbox(0, "Film nie jest piosenką!");
+                    }
+
+                    if (xml.responseText == "true") {
                         link.value = "";
                         return alertModule.alertbox(1, "Pomyślnie dodano utwór do playlisty.");
                     }
 
                     if(xml.responseText == "err"){
                         return alertModule.alertbox(2, "Err with connection.");
-                    }
-
-                    if(xml.responseText == "wrg"){
-                        return alertModule.alertbox(0, "Film nie jest piosenką!");
                     }
                 },
                 error: function () {

@@ -12,14 +12,21 @@ if ($_POST) {
             if (checkLink($link)) {
                 try{
                     $song = YoutubeAPI::getSongInfo($link);
+                    if(!$song){
+                        echo json_encode(false);
+                        return;
+                    }
                     if($song->checkCategory()){
                         if(DbRepo::addSong($song)){
                             echo json_encode(true);
+                            return;
                         }else{
                             echo "err";
+                            return;
                         };
                     }else{
                         echo "wrg";
+                        return;
                     }
                 }catch(Exception $e){
                     echo "err";
@@ -27,9 +34,11 @@ if ($_POST) {
                 }
             } else {
                 echo json_encode(false);
+                return;
             }
         } else {
             echo json_encode(false);
+            return;
         }
     } else {
         session_destroy();
