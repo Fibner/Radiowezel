@@ -1,5 +1,11 @@
 import alertModule from "./alertbox.js";
 window.onload = function () {
+    document.querySelector("#playlist-button").addEventListener("click", function(){
+        location.href = "playlist";
+    });
+    document.querySelector("#index-button").addEventListener("click", function(){
+        location.href = "http://localhost/Radiowezel/index";
+    });
     document.querySelector("#add-button").addEventListener("click", function () {
         let link = document.querySelector("#link-input");
         if (link.value == null || link.value == "") return alertModule.alertbox(2, "Nie podano linku!");
@@ -13,7 +19,7 @@ window.onload = function () {
                 },
                 success: function (data, string, xml) {
                     console.log("Sending song to playlist...");
-                    // console.log(xml.responseText);
+                     console.log(xml.responseText);
                     if (xml.responseText == "false"){
                         return alertModule.alertbox(0, "Nie poprawny link do youtube.");
                     }

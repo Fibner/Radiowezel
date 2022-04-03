@@ -1,0 +1,106 @@
+body{
+    font-family: 'Press Start 2P', cursive;
+    background-color: #312f31;
+    color: white;
+
+}
+
+#menu-section {
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+}
+
+.Pbutton {
+    margin-top: 1%;
+    float: right;
+    cursor: pointer;
+    background-color: #455065;
+    color: white;
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    border: none;
+    margin-right: 1%;
+}
+
+.Wbutton {
+    margin-top: 1%;
+    float: right;
+    cursor: pointer;
+    background-color: #455065;
+    color: white;
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    border: none;
+    margin-right: 1%;
+}
+
+.FButton{
+    margin-top: 1%;
+    cursor: pointer;
+    float: left;
+    background-color: #282e3d;
+    color: white;
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    border: none;
+    margin-right: 1%;
+}
+
+#functions{
+    margin-left: auto;
+    margin-right: auto;
+    width: 465px;
+    display: block;
+    height: 50px;
+}
+
+#center{
+    display: block;
+    margin-left: 5%;
+    width: 90%;
+    height: 600px;
+    padding: 1%;
+}
+
+#music-list{
+    float: left;
+    width: 49.5%;
+    height: max-content;
+    background-color: #8c8f8f;
+    margin-right: 1%;
+    border-radius: 5%;
+    min-height: 600px;
+    padding: 2%;
+    text-align: center;
+}
+
+#playlist-list{
+    float: left;
+    width: 49.5%;
+    height: max-content;
+    min-height: 600px;
+    padding: 2%;
+    background-color: #8c8f8f;
+    border-radius: 5%;
+    text-align: center;
+}
+
+.listElement{
+    color: black;
+    background-color: lightgray;
+    border-radius: 5px;
+    height: 10%;
+    text-align: center;
+}
+
+.draggable{
+    cursor: move;
+}
+
+.draggable.draging{
+    opacity: 0.5;
+}

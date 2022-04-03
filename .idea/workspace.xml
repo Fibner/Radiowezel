@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f5b947d5-0499-4bb1-b5d2-fb322cb56894" name="Changes" comment="" />
+    <list default="true" id="f5b947d5-0499-4bb1-b5d2-fb322cb56894" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/pages/addsong.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/addsong.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/Class/YoutubeAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/Class/YoutubeAPI.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/addsong-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/addsong-page.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +41,7 @@
       <option name="presentableId" value="Default" />
       <updated>1648668170452</updated>
       <workItem from="1648668173189" duration="141000" />
+      <workItem from="1648986862374" duration="2000" />
     </task>
     <servers />
   </component>
@@ -53,5 +58,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

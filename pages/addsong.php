@@ -21,8 +21,11 @@ if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
 
 <body>
     <div id="menu-section">
+    <div id="index-div" class="menu-button-div">
+            <input type="button" id="index-button" class="Pbutton" name="button" value="Główna" />
+        </div>
         <div id="playlist-div" class="menu-button-div">
-            <input type="button" class="Pbutton" name="button" value="Playlista" />
+            <input type="button" id="playlist-button" class="Pbutton" name="button" value="Playlista" />
         </div>
         <div id="logout-div" class="menu-button-div">
             <input type="button" class="Wbutton" name="button" value="Wyloguj" />
@@ -32,7 +35,7 @@ if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
 
     <div id="link-div">
         <br><br>
-        <h1>Dodaj piosenke do playlisty</h1>
+        <h1>Dodaj piosenke do listy</h1>
         <hr>
         <input type="text" name="link" id="link-input" class="lin">
         <input type="button" class="Lbutton" name="button" id="add-button" value="Dodaj" />
