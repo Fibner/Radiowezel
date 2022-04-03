@@ -15,4 +15,11 @@ class DbRepo{
             return false;
         }
     }
+    public static function getSongToPlay(){
+        $result = self::$dbconn -> query("SELECT * FROM music ORDER BY RAND() LIMIT 1");
+        // var_dump($result);
+        foreach($result as $item){
+            return $item['songId'];
+        }
+    }
 }
