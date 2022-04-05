@@ -6,6 +6,9 @@ window.onload = function(){
     document.querySelector("#index-button").addEventListener("click", function(){
         location.href = "http://localhost/Radiowezel/index";
     });
+    document.querySelector('#list-button').addEventListener("click", function(){
+        location.href = "musicList";
+    })
 
     document.querySelector('#save-button').addEventListener("click", save);
     document.querySelector('#delete-button').addEventListener("click", deletePlaylist);

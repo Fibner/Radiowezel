@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <title>Lista piosenek</title>
+    <title>Lista zbanowanych piosenek</title>
 </head>
 <body>
     <div id="menu-section">
@@ -28,15 +28,13 @@
         </div>
     </div>
 
-    
     <div id="logout-div" class="menu-button-div">
-            <input type="button" id="ban-button" class="Wbutton" name="button" value="ZBANOWANE" />
+        <input type="button" id="list-button" class="Wbutton" name="button" value="Lista piosenek" />
     </div>
     <div id="musicList-conteiner">
-        
         <?php
             require "../php/dbconnection.php";
-            $sql = 'SELECT * FROM music;';
+            $sql = 'SELECT * FROM bannedmusic;';
 
             $sql_data = $db -> query($sql);
             
@@ -47,7 +45,7 @@
                         echo'<p id="elementTitle">'.$data['title'].'</p>';
                         echo'<img src="'.$data['thumbnail'].'" alt="miniaturka">';
 
-                        echo"<input type='button' class='ban-button' value='Zbanuj' onclick='javascript:location.href=`../php/ban.php?id=".$data['id']."`' />";
+                        echo"<input type='button' class='ban-button' value='ODBANUJ' onclick='javascript:location.href=`../php/unban.php?id=".$data['id']."`' />";
 
                     echo'</div>';
                     echo'<div class="elementInfo" id="info'.$i.'">';
@@ -63,6 +61,6 @@
     </div>
 
     <script src="../src/js/jquery-3.6.0.js"></script>
-    <script src="../src/js/musicList-page.js"></script>
+    <script src="../src/js/bannedMusic-page.js"></script>
 </body>
 </html>

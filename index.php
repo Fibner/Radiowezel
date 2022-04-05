@@ -28,6 +28,9 @@ if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
         <div id="playlist-div" class="menu-button-div">
             <input type="button" class="Pbutton" name="button" id="playlist-button" value="Playlista" />
         </div>
+        <div id="playlist-div" class="menu-button-div">
+            <input type="button" class="Pbutton" name="button" id="list-button" value="Lista" />
+        </div>
         <div id="logout-div" class="menu-button-div">
             <input type="button" class="Wbutton" name="button" id="logout-button" value="Wyloguj" />
         </div>

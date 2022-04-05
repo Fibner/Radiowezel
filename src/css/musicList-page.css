@@ -1,0 +1,91 @@
+body{
+    font-family: 'Press Start 2P', cursive;
+    background-color: #312f31;
+    color: white;
+
+}
+
+#menu-section {
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+}
+
+.Pbutton {
+    margin-top: 1%;
+    float: right;
+    cursor: pointer;
+    background-color: #455065;
+    color: white;
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    border: none;
+    margin-right: 1%;
+}
+.ban-button{
+    margin-top: 1%;
+    float: right;
+    cursor: pointer;
+    background-color: #455065;
+    color: white;
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    border: none;
+    margin-right: 1%;
+}
+
+.Wbutton {
+    margin-top: 1%;
+    float: right;
+    cursor: pointer;
+    background-color: #455065;
+    color: white;
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    border: none;
+    margin-right: 1%;
+}
+
+#musicList-conteiner{
+    background-color: #8c8f8f;
+    padding: 1%;
+    width: 90%;
+    height: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.listElement{
+    cursor: pointer;
+    background-color: #adadad;
+    padding: 1%;
+    width: 90%;
+    height: max-content;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+}
+
+#mainInfo{
+    display: block;
+    height: 90px;
+}
+#mainInfo p{
+    margin-top: 33px;
+    width: 80%;
+    float: left;
+}
+#mainInfo img{
+float: left;
+}
+
+.elementInfo{
+    background-color: #312f31;
+    border-radius: 10px;
+    padding: 1%;
+}

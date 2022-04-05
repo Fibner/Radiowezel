@@ -6,6 +6,9 @@ window.onload = function () {
     document.querySelector("#add-button").addEventListener("click", function () {
         location.href = "pages/addsong";
     });
+    document.querySelector('#list-button').addEventListener("click", function(){
+        location.href = "pages/musicList";
+    })
     
     var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";

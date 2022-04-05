@@ -20,6 +20,9 @@
         <div id="playlist-div" class="menu-button-div">
             <input type="button" id="add-button" class="Pbutton" name="button" value="Dodaj" />
         </div>
+        <div id="playlist-div" class="menu-button-div">
+            <input type="button" class="Pbutton" name="button" id="list-button" value="Lista" />
+        </div>
         <div id="logout-div" class="menu-button-div">
             <input type="button" id="logout-button" class="Wbutton" name="button" value="Wyloguj" />
         </div>
