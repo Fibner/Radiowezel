@@ -6,11 +6,12 @@ window.jsonLoaded = false;
 var breaks = [];
 var auto = false;
 var emergencyMode = false;
+var delay = 0;
 
 window.onload = function () {
     document.querySelector("#emergency").addEventListener("click", emergency);
-    document.querySelector("#manual").addEventListener("click", function(){auto = false})
-    document.querySelector("#auto").addEventListener("click", function(){auto = true})
+    document.querySelector("#manual").addEventListener("click", function () { auto = false })
+    document.querySelector("#auto").addEventListener("click", function () { auto = true })
     document.querySelector("#manual").checked = true;
     document.querySelector("#logout-button").addEventListener("click", logOut);
     document.querySelector("#playlist-button").addEventListener("click", function () {
@@ -39,39 +40,36 @@ $.getJSON("src/js/test.json", function (data) {
 //Repeat every 100ms
 function repeater() {
     setInterval(function () {
-        if(auto) checkBreak();
+        if (auto) checkBreak();
     }, 100)
 }
 
 function checkBreak() {
     const date = new Date();
-    const test =  date.toLocaleTimeString();
-    const time = date.getHours() + ":" + date.getMinutes();
-    console.log(test);
+    const time = date.toLocaleTimeString('pl-PL');
 
     if (time > breaks[0][0] && time < breaks[0][1]) {
-        player.playVideo();
+        unMuteMusicAnim();
     } else if (time > breaks[1][0] && time < breaks[1][1]) {
-        player.playVideo();
+        unMuteMusicAnim();
     } else if (time > breaks[2][0] && time < breaks[2][1]) {
-        player.playVideo();
+        unMuteMusicAnim();
     } else if (time > breaks[3][0] && time < breaks[3][1]) {
-        player.playVideo();
+        unMuteMusicAnim();
     } else if (time > breaks[4][0] && time < breaks[4][1]) {
-        player.playVideo();
+        unMuteMusicAnim();
     } else if (time > breaks[5][0] && time < breaks[5][1]) {
-        player.playVideo();
+        unMuteMusicAnim();
     } else if (time > breaks[6][0] && time < breaks[6][1]) {
-        player.playVideo();
+        unMuteMusicAnim();
     } else if (time > breaks[7][0] && time < breaks[7][1]) {
-        player.playVideo();
+        unMuteMusicAnim();
     } else if (time > breaks[8][0] && time < breaks[8][1]) {
-        player.playVideo();
+        unMuteMusicAnim();
     } else if (time > breaks[9][0] && time < breaks[9][1]) {
-        player.playVideo();
+        unMuteMusicAnim();
     } else {
-        console.log("to")
-        player.pauseVideo();
+        muteMusicAnim();
     }
 }
 
@@ -132,8 +130,23 @@ function onPlayerStateChange(event) {
     }
 }
 
+function muteMusicAnim() {
+    if (player.getVolume() != 0) {
+        console.log(player.getVolume());
+        player.setVolume(player.getVolume() - 2)
+    } else {
+        player.pauseVideo();
+    }
+}
+
+function unMuteMusicAnim() {
+    player.playVideo();
+    if(player.getVolume() != 100) player.setVolume(player.getVolume() + 2);
+}
+
 function emergency() {
     emergencyMode = true;
     auto = false;
     player.stopVideo();
+    document.querySelector("#manual").checked = true; 
 }
