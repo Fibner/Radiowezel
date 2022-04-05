@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 02 Kwi 2022, 22:52
--- Wersja serwera: 10.4.11-MariaDB
--- Wersja PHP: 7.4.5
+-- Czas generowania: 05 Kwi 2022, 16:51
+-- Wersja serwera: 10.4.22-MariaDB
+-- Wersja PHP: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,11 +45,27 @@ CREATE TABLE `music` (
 --
 
 INSERT INTO `music` (`id`, `songId`, `title`, `date`, `link`, `thumbnail`, `viewCount`, `likeCount`, `dislikeCount`, `commentCount`) VALUES
-(1, '', '', '0000-00-00', 'https://www.youtube.com/watch?v=-Mbbggk6d9c', '', 0, 0, 0, 0),
-(5, 'Gx4JEBwVlXo', 'A$AP Rocky - L$D (Explicit - Official Video)', '2015-06-10', 'https://www.youtube.com/watch?v=Gx4JEBwVlXo', 'https://i.ytimg.com/vi/Gx4JEBwVlXo/default.jpg', 19621309, 199183, 3391, 2776),
-(6, 'Cl5Vkd4N03Q', 'After Dark', '2016-11-19', 'https://www.youtube.com/watch?v=Cl5Vkd4N03Q', 'https://i.ytimg.com/vi/Cl5Vkd4N03Q/default.jpg', 23760302, 380935, 9707, 766),
-(13, 'xpVfcZ0ZcFM', 'Drake - God\'s Plan', '2018-02-17', 'https://www.youtube.com/watch?v=xpVfcZ0ZcFM', 'https://i.ytimg.com/vi/xpVfcZ0ZcFM/default.jpg', 1412014526, 14578093, 503210, 597095),
-(14, 'xpVfcZ0ZcFM', 'Drake - God\'s Plan', '2018-02-17', 'https://www.youtube.com/watch?v=xpVfcZ0ZcFM', 'https://i.ytimg.com/vi/xpVfcZ0ZcFM/default.jpg', 1412014526, 14578100, 503210, 597095);
+(16, 'VAotPZ815wE', 'Hentai Bitch - Shiki-TMNS X Kodama Boy X Big Gay', '2020-09-26', 'https://www.youtube.com/watch?v=VAotPZ815wE', 'https://i.ytimg.com/vi/VAotPZ815wE/default.jpg', 882637, 21179, 426, 450),
+(17, '8P4nWfk0ia8', 'Timmy Trumpet & KSHMR feat. Zafrir - The Prayer [Official Music Video]', '2020-06-12', 'https://www.youtube.com/watch?v=8P4nWfk0ia8', 'https://i.ytimg.com/vi/8P4nWfk0ia8/default.jpg', 3808437, 76420, 1838, 1363);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `playlist`
+--
+
+CREATE TABLE `playlist` (
+  `id` int(11) NOT NULL,
+  `musicId` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `playlist`
+--
+
+INSERT INTO `playlist` (`id`, `musicId`) VALUES
+(104, 0),
+(105, 1);
 
 -- --------------------------------------------------------
 
@@ -81,20 +97,32 @@ ALTER TABLE `music`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeksy dla tabeli `playlist`
+--
+ALTER TABLE `playlist`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeksy dla tabeli `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT dla zrzuconych tabel
 --
 
 --
 -- AUTO_INCREMENT dla tabeli `music`
 --
 ALTER TABLE `music`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT dla tabeli `playlist`
+--
+ALTER TABLE `playlist`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`

@@ -9,6 +9,7 @@ window.onload = function(){
 
     document.querySelector('#save-button').addEventListener("click", save);
     document.querySelector('#delete-button').addEventListener("click", deletePlaylist);
+    document.querySelector('#random-button').addEventListener("click", randomPlaylist);
 }
 
 function logOut(){
@@ -51,9 +52,21 @@ function save(){
     }
 }
 function deletePlaylist(){
-    console.log('delete')
     $.ajax({
         url: "../php/playlistDelete",
+        success: function(){
+            location.reload();
+        },
+        error: function(){
+            alertModule.alertbox(2,"Err with connection.");
+        }
+    });
+}
+
+function randomPlaylist(){
+    console.log('losowe');
+    $.ajax({
+        url: "../php/playlistRandom",
         success: function(){
             location.reload();
         },
