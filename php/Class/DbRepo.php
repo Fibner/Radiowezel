@@ -15,11 +15,14 @@ class DbRepo{
             return false;
         }
     }
-    public static function getSongToPlay(){
-        $result = self::$dbconn -> query("SELECT * FROM music ORDER BY RAND() LIMIT 1");
-        // var_dump($result);
-        foreach($result as $item){
-            return $item['songId'];
+    public static function getSongs(){
+        $musicResult = self::$dbconn -> query("SELECT * FROM playlist");
+        $list = [];
+        foreach($musicResult as $item){
+            $infoResult = self::$dbconn -> query("SELECT * FROM music WHERE id = {$item['musicId']}");
+            $infoResult = $infoResult->fetch_assoc();
+            array_push($list, $infoResult["songId"]);
         }
+        return $list;
     }
 }

@@ -44,7 +44,7 @@ function save(){
         success: function(data, string, xml){
             console.log(xml.responseText);
             if(xml.responseText == "false") return wrongData();
-            location.reload();
+            // location.reload();
         },
         error: function(){
             alertModule.alertbox(2,"Err with connection.");
