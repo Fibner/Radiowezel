@@ -95,22 +95,18 @@ draggable.forEach(draggable =>{
 containers.forEach(container =>{
     container.addEventListener('dragover', e=>{
         e.preventDefault(); 
-        /*
         const afterElement = getDragAfterElement(container, e.clientY);
-        console.log(afterElement);
-        */
         const draggable = document.querySelector('.draging');
         container.appendChild(draggable);
     })
 })
 
-/*
 function getDragAfterElement(container, y){
-    const draggableElements = [...container.querySelectorAll('draggable:not(.draging)')];
+    const draggableElements = [...container.querySelectorAll('.draggable:not(.draging)')];
     
-    return draggableElements.reduce(function(closest, child){           funkcja reduce nie wykonuje się i nie wiem dlaczego kurde !!!!
-        
-        const box = child.getBoundingClientRects()
+    console.log(draggableElements);
+    return draggableElements.reduce(function(closest, child){
+        const box = child.getBoundingClientRect();
         const offset = y - box.top - box.height / 2;
         console.log(offset);
 
@@ -122,7 +118,6 @@ function getDragAfterElement(container, y){
 
     }, { offset: Number.NEGATIVE_INFINITY }).element
 }
-*/
 
 
 

@@ -6,10 +6,8 @@ window.onload = function () {
     document.querySelector("#add-button").addEventListener("click", function () {
         location.href = "pages/addsong";
     });
-    // document.querySelector("#musicPlayer").addEventListener("click", musicPlayer);
-    var playlistId = undefined;
+    
     var tag = document.createElement('script');
-
     tag.src = "https://www.youtube.com/iframe_api";
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -24,14 +22,6 @@ function logOut() {
         }
     }).fail(function () {
         alert("Błąd serwera");
-    })
-}
-
-function musicPlayer() {
-    $.ajax({
-        success: function () {
-            location.href = "pages/musicPlayer.php"
-        }
     })
 }
 
@@ -59,17 +49,6 @@ function onYouTubeIframeAPIReady() {
             });
         }
     })
-    // player = new YT.Player('player', {
-    //     height: '360',
-    //     width: '640',
-    //     playerVars: { 'autoplay': 0, 'controls': 1, 'enablejsapi': 1, 'rel': 0 },
-    //     videoId: id,
-    //     events: {
-    //         'onReady': onPlayerReady,
-    //         'onStateChange': onPlayerStateChange,
-    //         //'onError': getNewMusic
-    //     }
-    // });
 }
 
 function onPlayerReady(event) {
