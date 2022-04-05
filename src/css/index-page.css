@@ -84,3 +84,8 @@ body{
 hr{
     width: 50%;
 }
+
+#panel{
+    margin-top: 10%;
+    text-align: center;
+}

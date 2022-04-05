@@ -32,8 +32,10 @@ if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
             <input type="button" class="Wbutton" name="button" id="logout-button" value="Wyloguj" />
         </div>
     </div>
+    <div id="panel">
     <div id="player">
-    <!-- <iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1" frameborder="0" allowfullscreen> -->
+    
+    </div>
     </div>
     <script src="src/js/jquery-3.6.0.js"></script>
     <script src="src/js/index-page.js"></script>
