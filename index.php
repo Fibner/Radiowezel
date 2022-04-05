@@ -33,9 +33,23 @@ if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
         </div>
     </div>
     <div id="panel">
-    <div id="player">
-    
-    </div>
+        <div id="player" class="panel-item"></div>
+        <div id="placeholder" class="panel-item"></div>
+        <div id="subpanel" class="panel-item">
+            <div id="subpanel-top">
+                <label for="manual">Manual</label>
+                <input type="radio" id="manual" name="type" value="false">
+                |
+                <label for="auto">Auto</label>
+                <input type="radio" id="auto" name="type" value="true">
+                <br>
+                <br>
+                <input type="button" id="emergency" value="Awaryjny stop">
+            </div>
+            <div id="subpanel-down">
+               <span id="counter">NaN</span>
+            </div>
+        </div>
     </div>
     <script src="src/js/jquery-3.6.0.js"></script>
     <script src="src/js/index-page.js"></script>

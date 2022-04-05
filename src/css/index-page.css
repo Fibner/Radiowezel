@@ -89,3 +89,24 @@ hr{
     margin-top: 10%;
     text-align: center;
 }
+
+.panel-item{
+    display: inline-block
+}
+
+#emergency{
+    background-color: #9c1712;
+    border-radius: 20px;
+}
+
+#subpanel-top{
+    margin-bottom: 100%;
+}
+
+#subpanel-down{
+    margin-bottom: 100%;
+}
+
+#placeholder{
+    width: 200px;
+}
