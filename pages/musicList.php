@@ -28,9 +28,9 @@
         </div>
     </div>
 
-    
-    <div id="logout-div" class="menu-button-div">
-            <input type="button" id="ban-button" class="Wbutton" name="button" value="ZBANOWANE" />
+    <h1>LISTA PIOSENEK</h1>
+    <div id="button-div" class="menu-button-div">
+            <input type="button" id="ban-button" class="Zbutton" name="button" value="ZBANOWANE" />
     </div>
     <div id="musicList-conteiner">
         

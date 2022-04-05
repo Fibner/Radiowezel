@@ -4,6 +4,9 @@ body{
     color: white;
 
 }
+h1{
+    text-align: center;
+}
 
 #menu-section {
     margin-left: auto;
@@ -23,6 +26,24 @@ body{
     border: none;
     margin-right: 1%;
 }
+
+.Zbutton{
+    margin-top: 1%;
+    cursor: pointer;
+    background-color: red;
+    color: black;
+    padding: 10px;
+    width: max-content;
+    height: 50px;
+    border: none;
+    margin-right: 1%;
+}
+#button-div{
+    text-align: center;
+    margin: 0.5%;
+    padding: 0.5%;
+}
+
 .ban-button{
     margin-top: 1%;
     float: right;

@@ -27,9 +27,9 @@
             <input type="button" id="logout-button" class="Wbutton" name="button" value="Wyloguj" />
         </div>
     </div>
-
-    <div id="logout-div" class="menu-button-div">
-        <input type="button" id="list-button" class="Wbutton" name="button" value="Lista piosenek" />
+    <h1>ZBANOWANE PIOSENKI</h1>
+    <div id="button-div" class="menu-button-div">
+        <input type="button" id="list-button" class="Zbutton" name="button" value="Lista piosenek" />
     </div>
     <div id="musicList-conteiner">
         <?php
