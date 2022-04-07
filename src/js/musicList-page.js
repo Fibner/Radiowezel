@@ -4,7 +4,7 @@ window.onload = function(){
       location.href = "addsong";
   });
   document.querySelector("#index-button").addEventListener("click", function(){
-      location.href = "http://localhost/Radiowezel/index";
+    location.href = "../index";
   });
   document.querySelector('#playlist-button').addEventListener("click", function(){
       location.href = "playlist";

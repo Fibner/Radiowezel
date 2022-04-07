@@ -14,6 +14,7 @@ if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
     <link rel="stylesheet" href="../src/css/login-page.css">
     <script src="https://kit.fontawesome.com/9ec0aafe67.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="../src/css/button.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <title>Logowanie</title>
