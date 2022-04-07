@@ -38,13 +38,19 @@ $.getJSON("src/js/test.json", function (data) {
 });
 
 //Repeat every 100ms
-const repeater = setInterval(function () {
-    if (auto) checkBreak();
-}, 100)
+function repeater() {
+    setInterval(function () {
+        // console.log(checkDay());
+        if (checkDay()) {
+            if (auto) checkBreak();
+        }else{
+            player.pauseVideo();
+        }
+    }, 100)
+}
 
 function checkBreak() {
-    const date = new Date();
-    const time = date.toLocaleTimeString('pl-PL');
+    const time = checkTime();
 
     if (time > breaks[0][0] && time < breaks[0][1]) {
         unMuteMusicAnim();
@@ -67,6 +73,23 @@ function checkBreak() {
     } else {
         muteMusicAnim();
     }
+}
+function checkDay() {
+    if (checkTime() == "07:00:00") console.log("Tu trzeba losować");
+    var date = new Date();
+    // console.log(date.getDay());
+    if (date.getDay() > 0 && date.getDay() < 6) return true;
+    return false
+}
+function checkTime() {
+    const date = new Date();
+    return date.toLocaleTimeString('pl-PL');
+}
+function weekendMode() {
+    clearInterval(repeater)
+    const weekendRepeater = setInterval(function () {
+        if (checkDay() > 0 && checkDay() < 6) repeater;
+    }, 1000)
 }
 function logOut() {
     $.ajax({
@@ -91,7 +114,7 @@ function onYouTubeIframeAPIReady() {
             'onError': onPlayerError
         }
     });
-    repeater;
+    repeater();
 }
 
 function getSong() {
@@ -146,6 +169,10 @@ function muteMusicAnim() {
 
 function unMuteMusicAnim() {
     player.playVideo();
+    if(player.isMuted()){
+        player.setVolume(0)
+        player.unMute()
+    }
     if (player.getVolume() != 100) player.setVolume(player.getVolume() + 2);
 }
 
