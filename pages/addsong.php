@@ -13,6 +13,7 @@ if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/9ec0aafe67.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../src/css/addsong-page.css">
+    <link rel="stylesheet" href="../src/css/button.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">

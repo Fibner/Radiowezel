@@ -93,8 +93,10 @@ body{
     color: black;
     background-color: lightgray;
     border-radius: 5px;
-    height: 10%;
+    height: 100px;
     text-align: center;
+    padding: 0.5%;
+    margin: 1%;
 }
 
 .draggable{
@@ -104,3 +106,13 @@ body{
 .draggable.draging{
     opacity: 0.5;
 }
+
+.listElement p{
+    width: 80%;
+    float: left;
+}
+.listElemtntImg{
+    width: 20%;
+    float: left;
+}
+

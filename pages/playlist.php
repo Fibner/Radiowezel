@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="../src/css/playlist-page.css">
+    <link rel="stylesheet" href="../src/css/button.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -48,7 +49,7 @@
             <?php
                 require "../php/dbconnection.php";
 
-                $sql = "SELECT id,title FROM music;";
+                $sql = "SELECT id,title,thumbnail FROM music;";
                 $sql2 ="SELECT musicId FROM playlist;";
 
                 $sql_data = $db -> query($sql);
@@ -61,7 +62,14 @@
 
                 foreach($sql_data as $data){
                     if(in_array($data['id'], $checkData) != TRUE){
-                        echo('<p id= "'.$data['id'].'"class="draggable listElement" draggable="true">'.$data['title'].'</p>');
+                        //echo('<p id= "'.$data['id'].'"class="draggable listElement" draggable="true">'.$data['title'].'</p>');
+
+                        echo('
+                            <div id= "'.$data['id'].'"class="draggable listElement" draggable="true">
+                                <p>'.$data['title'].'</p>
+                                <img src="'.$data['thumbnail'].'" alt="miniaturka">
+                            </div>
+                        ');
                     }
                 };
             ?>
@@ -70,11 +78,16 @@
             <h1>Playlista</h1>
             <?php
                 require "../php/dbconnection.php";
-                $sql = "SELECT music.id ,title FROM music INNER JOIN playlist ON music.id = playlist.musicId;";
+                $sql = "SELECT music.id ,title,thumbnail FROM music INNER JOIN playlist ON music.id = playlist.musicId;";
                 $sql_data = $db -> query($sql);
 
                 foreach($sql_data as $data){
-                    echo('<p id= "'.$data['id'].'"class="draggable listElement" draggable="true">'.$data['title'].'</p>');
+                    echo('
+                            <div id= "'.$data['id'].'"class="draggable listElement" draggable="true">
+                                <p>'.$data['title'].'</p>
+                                <div class = "listElemtntImg"><img src="'.$data['thumbnail'].'" alt="miniaturka"></div>
+                            </div>
+                        ');
                 };
             ?>
         </div>
