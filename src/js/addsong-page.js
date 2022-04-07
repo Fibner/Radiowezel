@@ -37,6 +37,10 @@ window.onload = function () {
                         return alertModule.alertbox(1, "Pomyślnie dodano utwór do playlisty.");
                     }
 
+                    if(xml.responseText == "is"){
+                        return alertModule.alertbox(2, "Podana piosenka istnieje już w bazie.");
+                    }
+
                     if(xml.responseText == "err"){
                         return alertModule.alertbox(2, "Err with connection.");
                     }

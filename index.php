@@ -51,8 +51,11 @@ if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
             </div>
             <div id="subpanel-down">
                <span id="counter">NaN</span>
-            </div>
+            </div>         
         </div>
+            <div id="next-div">
+                <button id="next-button">NASTĘPNA!!!! -></button>
+            </div>   
     </div>
     <script src="src/js/jquery-3.6.0.js"></script>
     <script src="src/js/index-page.js"></script>

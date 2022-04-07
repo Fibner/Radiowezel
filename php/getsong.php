@@ -3,4 +3,4 @@
 require "dbconnection.php";
 require "Class/DbRepo.php";
 
-echo DbRepo::getSongToPlay();
+echo json_encode(DbRepo::getSong());

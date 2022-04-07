@@ -12,6 +12,10 @@ if ($_POST) {
             if (checkLink($link)) {
                 try{
                     $song = YoutubeAPI::getSongInfo($link);
+                    if(DbRepo::checkIfItIs($song->songId)){
+                        echo "is";
+                        return;
+                    } 
                     if(!$song){
                         echo json_encode(false);
                         return;

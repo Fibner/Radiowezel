@@ -15,14 +15,20 @@ class DbRepo{
             return false;
         }
     }
-    public static function getSongs(){
-        $musicResult = self::$dbconn -> query("SELECT * FROM playlist");
-        $list = [];
+    public static function getSong(){
+        $musicResult = self::$dbconn -> query("SELECT * FROM playlist ORDER BY id ASC LIMIT 1");
         foreach($musicResult as $item){
-            $infoResult = self::$dbconn -> query("SELECT * FROM music WHERE id = {$item['musicId']}");
+            $infoResult = self::$dbconn -> query("SELECT id, songId FROM music WHERE id = {$item['musicId']}");
             $infoResult = $infoResult->fetch_assoc();
-            array_push($list, $infoResult["songId"]);
+            return $infoResult;
         }
-        return $list;
+    }
+    public static function removeSong(string $id){
+        if(self::$dbconn -> query("DELETE FROM `playlist` WHERE musicId = {$id}"));
+    }
+    public static function checkIfItIs($songId){
+        $result = self::$dbconn -> query("SELECT songId FROM music WHERE songId = '{$songId}'");
+        if($result->num_rows > 0) return true;
+        return false;
     }
 }
