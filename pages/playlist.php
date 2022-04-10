@@ -16,36 +16,36 @@
 <body>
     <div id="menu-section">
         <div id="index-div" class="menu-button-div">
-            <input type="button" id="index-button" class="Pbutton" name="button" value="Główna" />
+            <input type="button" id="index-button" class="Pbutton" name="button" value="GŁÓWNA" />
         </div>
         <div id="playlist-div" class="menu-button-div">
-            <input type="button" id="add-button" class="Pbutton" name="button" value="Dodaj" />
+            <input type="button" id="add-button" class="Pbutton" name="button" value="DODAJ" />
         </div>
         <div id="playlist-div" class="menu-button-div">
-            <input type="button" class="Pbutton" name="button" id="list-button" value="Lista" />
+            <input type="button" class="Pbutton" name="button" id="list-button" value="LISTA" />
         </div>
         <div id="logout-div" class="menu-button-div">
-            <input type="button" id="logout-button" class="Wbutton" name="button" value="Wyloguj" />
+            <input type="button" id="logout-button" class="Wbutton" name="button" value="WYLOGUJ" />
         </div>
     </div>
 
     <div id="functions">
         <div id="index-div" class="menu-button-div">
-            <input type="button" id="save-button" class="FButton" name="button" value="Zapisz" />
+            <input type="button" id="save-button" class="FButton" name="button" value="ZAPISZ" />
         </div>
 
         <div id="index-div" class="menu-button-div">
-            <input type="button" id="delete-button" class="FButton" name="button" value="Usun" />
+            <input type="button" id="delete-button" class="FButton" name="button" value="USUŃ" />
         </div>
 
         <div id="index-div" class="menu-button-div">
-            <input type="button" id="random-button" class="FButton" name="button" value="Losowo" />
+            <input type="button" id="random-button" class="FButton" name="button" value="LOSOWO" />
         </div>
     </div>
 
     <div id="center">
         <div id="music-list" class="container">
-        <h1>Lista z muzyka</h1>
+        <h1>LISTA Z MUZYKĄ</h1>
             <?php
                 require "../php/dbconnection.php";
 
@@ -75,7 +75,7 @@
             ?>
         </div>
         <div id="playlist-list" class="container">
-            <h1>Playlista</h1>
+            <h1>PLAYLISTA</h1>
             <?php
                 require "../php/dbconnection.php";
                 $sql = "SELECT music.id ,title,thumbnail FROM music INNER JOIN playlist ON music.id = playlist.musicId;";

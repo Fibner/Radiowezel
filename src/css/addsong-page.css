@@ -1,8 +1,7 @@
 * {
     font-family: 'Press Start 2P', cursive;
-    background-color: #312f31;
+    background-color: #503f49;
     color: white;
-
 }
 
 #menu-section {
@@ -11,56 +10,58 @@
     height: 100px;
 }
 
-.Pbutton {
-    margin-top: 1%;
+.Pbutton{
+    margin-top: 0.5%;
     float: right;
     cursor: pointer;
-    background-color: #455065;
+    background-color: #8a7f85;
     color: white;
     padding: 10px;
-    width: 150px;
+    width: 200px;
     height: 50px;
     border: none;
     margin-right: 1%;
+    font-size: 15px;
 }
 
 .Wbutton {
-    margin-top: 1%;
+    margin-top: 0.5%;
     float: right;
     cursor: pointer;
-    background-color: #455065;
+    background-color: #8a7f85;
     color: white;
     padding: 10px;
-    width: 150px;
+    width: 200px;
     height: 50px;
     border: none;
     margin-right: 1%;
+    font-size: 15px;
 }
 
 #link-div {
-    margin-top: 5%;
+    margin-top: 10%;
     text-align: center;
 }
 
 #link-input {
     margin-top: 5%;
-    text-align: center;
 }
 
 .lin {
     border: none;
-    background-color: #434355;
-    height: 42px;
+    background-color: #8a7f85;
+    height: 50px;
     width: 500px;
 }
 
 .Lbutton {
     cursor: pointer;
-    background-color: #455065;
+    background-color: #8a7f85;
     color: white;
-    width: 150px;
-    height: 45px;
+    width: 200px;
+    height: 50px;
     border: none;
+    
 }
 
 hr {

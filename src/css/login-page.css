@@ -1,13 +1,17 @@
 *{
     font-family: 'Press Start 2P', cursive;
+    background-color: #503f49;
     color: white;
-    background-color: #20123c;
+}
+
+h1{
+  font-size: 30px;
 }
 
 #form-section{
     margin-top: 10%;
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 #login-div{
@@ -29,7 +33,7 @@
 
   .button{
     cursor: pointer;
-    background-color: #55417b;
+    background-color: #8a7f85;
     color: white;
     width: 150px;
     height: 45px;

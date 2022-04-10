@@ -1,32 +1,9 @@
 body{
     font-family: 'Press Start 2P', cursive;
-    background-color: #312f31;
+    background-color: #503f49;
     color: white;
  
 }
-
-/* #menu-section{
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    height: 100px;
-}
-
-.menu-button-div{
-   margin-top: 0.5%;
-}
-
-
-#logout-div{
-    float: right;
-}
-
-
-#playlist-div{
-    float: right;
-    font-size: 30px;
-}
-  */
 
 #menu-section{
     margin-left: auto;
@@ -38,10 +15,10 @@ body{
     margin-top: 1%;
     float: right;
     cursor: pointer;
-    background-color: #455065;
+    background-color: #8a7f85;
     color: white;
     padding: 10px;
-    width: 150px;
+    width: 200px;
     height: 50px;
     border: none;
     margin-right: 1%;
@@ -52,10 +29,10 @@ body{
     margin-top: 1%;
     float: right;
     cursor: pointer;
-    background-color: #455065;
+    background-color: #8a7f85;
     color: white;
     padding: 10px;
-    width: 150px;
+    width: 200px;
     height: 50px;
     border: none;
     margin-right: 1%;
@@ -75,7 +52,7 @@ body{
 
 .Lbutton{
     cursor: pointer;
-    background-color: #455065;
+    background-color: #8a7f85;
     color: white;
     width: 150px;
     height: 45px;
@@ -87,7 +64,7 @@ hr{
 }
 
 #panel{
-    margin-top: 10%;
+    margin-top: 5%;
     text-align: center;
 }
 
@@ -96,16 +73,28 @@ hr{
 }
 
 #emergency{
-    background-color: #9c1712;
-    border-radius: 20px;
+    background-color: #d8322c;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    border: none;
 }
 
 #subpanel-top{
-    margin-bottom: 100%;
+    width: 350px;
+    font-size: 20px;
+    margin-bottom: 60%;
 }
 
-#next-div{
-    margin-top: 10px;
+#next-button{
+    margin-right: 10%;
+    margin-top: 2%;
+    cursor: pointer;
+    background-color: #8a7f85;
+    color: white;
+    width: 250px;
+    height: 45px;
+    border: none;
 }
 
 #placeholder{

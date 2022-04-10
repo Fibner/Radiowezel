@@ -1,6 +1,6 @@
 body{
     font-family: 'Press Start 2P', cursive;
-    background-color: #312f31;
+    background-color: #503f49;
     color: white;
 
 }
@@ -15,10 +15,10 @@ body{
     margin-top: 1%;
     float: right;
     cursor: pointer;
-    background-color: #455065;
+    background-color: #8a7f85;
     color: white;
     padding: 10px;
-    width: 150px;
+    width: 200px;
     height: 50px;
     border: none;
     margin-right: 1%;
@@ -28,32 +28,32 @@ body{
     margin-top: 1%;
     float: right;
     cursor: pointer;
-    background-color: #455065;
+    background-color: #8a7f85;
     color: white;
     padding: 10px;
-    width: 150px;
+    width: 200px;
     height: 50px;
     border: none;
     margin-right: 1%;
 }
 
 .FButton{
-    margin-top: 1%;
+    margin-top: 15%;
     cursor: pointer;
     float: left;
-    background-color: #282e3d;
+    background-color: #d8d4d6;
     color: white;
-    padding: 10px;
+    padding: 15px;
     width: 150px;
     height: 50px;
     border: none;
-    margin-right: 1%;
+    margin-right: 3%;
 }
 
 #functions{
     margin-left: auto;
     margin-right: auto;
-    width: 465px;
+    width: 500px;
     display: block;
     height: 50px;
 }
@@ -64,13 +64,14 @@ body{
     width: 90%;
     height: 600px;
     padding: 1%;
+    margin-top: 5%;
 }
 
 #music-list{
     float: left;
     width: 49.5%;
     height: max-content;
-    background-color: #8c8f8f;
+    background-color: #0f000f;
     margin-right: 1%;
     border-radius: 5%;
     min-height: 600px;
@@ -84,7 +85,7 @@ body{
     height: max-content;
     min-height: 600px;
     padding: 2%;
-    background-color: #8c8f8f;
+    background-color: 	#0f000f;
     border-radius: 5%;
     text-align: center;
 }

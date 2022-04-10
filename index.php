@@ -23,16 +23,16 @@ if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
 <body>
     <div id="menu-section">
         <div id="add-div" class="menu-button-div">
-            <input type="button" class="Pbutton" name="button" id="add-button" value="Dodaj" />
+            <input type="button" class="Pbutton" name="button" id="add-button" value="DODAJ" />
         </div>
         <div id="playlist-div" class="menu-button-div">
-            <input type="button" class="Pbutton" name="button" id="playlist-button" value="Playlista" />
+            <input type="button" class="Pbutton" name="button" id="playlist-button" value="PLAYLISTA" />
         </div>
         <div id="playlist-div" class="menu-button-div">
-            <input type="button" class="Pbutton" name="button" id="list-button" value="Lista" />
+            <input type="button" class="Pbutton" name="button" id="list-button" value="LISTA" />
         </div>
         <div id="logout-div" class="menu-button-div">
-            <input type="button" class="Wbutton" name="button" id="logout-button" value="Wyloguj" />
+            <input type="button" class="Wbutton" name="button" id="logout-button" value="WYLOGUJ" />
         </div>
     </div>
     <div id="panel">
@@ -40,21 +40,21 @@ if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
         <div id="placeholder" class="panel-item"></div>
         <div id="subpanel" class="panel-item">
             <div id="subpanel-top">
-                <label for="manual">Manual</label>
+                <label for="manual">MANUAL</label>
                 <input type="radio" id="manual" name="type" value="false">
                 |
-                <label for="auto">Auto</label>
+                <label for="auto">AUTO</label>
                 <input type="radio" id="auto" name="type" value="true">
                 <br>
                 <br>
-                <input type="button" id="emergency" value="Awaryjny stop">
+                <input type="button" id="emergency" value="AWARYJNY STOP">
             </div>
             <div id="subpanel-down">
                <span id="counter">NaN</span>
             </div>         
         </div>
             <div id="next-div">
-                <button id="next-button">NASTĘPNA!!!! -></button>
+                <button id="next-button">NASTĘPNA ▶</button>
             </div>   
     </div>
     <script src="src/js/jquery-3.6.0.js"></script>

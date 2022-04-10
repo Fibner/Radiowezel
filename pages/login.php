@@ -21,21 +21,18 @@ if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
 </head>
 
 <body>
-    <section id="menu-section">
-
-    </section>
-   
+    <p>LOGOWANIE</p>
     <section id="form-section">
    
         <form onsubmit="return false">
-        <p>Logowanie</p>
-            <label for="login-input">Login</label>
+ 
+            <label for="login-input">LOGIN</label>
             <input type="text" name="login-input" id="login-input">
             <br>
-            <label for="password-input">Hasło</label>
+            <label for="password-input">HASŁO</label>
             <input type="password" name="password-input" id="password-input">
             <br>
-            <button id="submit" class="button">Zaloguj</button>
+            <button id="submit" class="button">ZALOGUJ</button>
         </form>
     </section>
   

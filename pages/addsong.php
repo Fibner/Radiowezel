@@ -23,26 +23,25 @@ if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
 <body>
     <div id="menu-section">
     <div id="index-div" class="menu-button-div">
-            <input type="button" id="index-button" class="Pbutton" name="button" value="Główna" />
+            <input type="button" id="index-button" class="Pbutton" name="button" value="GŁÓWNA" />
         </div>
         <div id="playlist-div" class="menu-button-div">
-            <input type="button" id="playlist-button" class="Pbutton" name="button" value="Playlista" />
+            <input type="button" id="playlist-button" class="Pbutton" name="button" value="PLAYLISTA" />
         </div>
         <div id="playlist-div" class="menu-button-div">
-            <input type="button" class="Pbutton" name="button" id="list-button" value="Lista" />
+            <input type="button" class="Pbutton" name="button" id="list-button" value="LISTA" />
         </div>
         <div id="logout-div" class="menu-button-div">
-            <input type="button" class="Wbutton" name="button" value="Wyloguj" />
+            <input type="button" class="Wbutton" name="button" value="WYLOGUJ" />
         </div>
     </div>
 
 
     <div id="link-div">
-        <br><br>
-        <h1>Dodaj piosenke do listy</h1>
+        <h1>DODAJ PIOSENKĘ DO LISTY</h1>
         <hr>
         <input type="text" name="link" id="link-input" class="lin">
-        <input type="button" class="Lbutton" name="button" id="add-button" value="Dodaj" />
+        <input type="button" class="Lbutton" name="button" id="add-button" value="DODAJ" />
     </div>
 
     <script src="../src/js/jquery-3.6.0.js"></script>

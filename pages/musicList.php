@@ -16,23 +16,23 @@
 <body>
     <div id="menu-section">
         <div id="index-div" class="menu-button-div">
-            <input type="button" id="index-button" class="Pbutton" name="button" value="Główna" />
+            <input type="button" id="index-button" class="Pbutton" name="button" value="GŁÓWNA" />
         </div>
         <div id="playlist-div" class="menu-button-div">
-            <input type="button" id="add-button" class="Pbutton" name="button" value="Dodaj" />
+            <input type="button" id="add-button" class="Pbutton" name="button" value="DODAJ" />
         </div>
         <div id="playlist-div" class="menu-button-div">
-            <input type="button" class="Pbutton" name="button" id="playlist-button" value="Playlista" />
+            <input type="button" class="Pbutton" name="button" id="playlist-button" value="PLAYLISTA" />
         </div>
         <div id="logout-div" class="menu-button-div">
-            <input type="button" id="logout-button" class="Wbutton" name="button" value="Wyloguj" />
+            <input type="button" id="logout-button" class="Wbutton" name="button" value="WYLOGUJ" />
         </div>
-    </div>
+    </div><br>
 
     <h1>LISTA PIOSENEK</h1>
     <div id="button-div" class="menu-button-div">
             <input type="button" id="ban-button" class="Zbutton" name="button" value="ZBANOWANE" />
-    </div>
+    </div><br>
     <div id="musicList-conteiner">
         
         <?php

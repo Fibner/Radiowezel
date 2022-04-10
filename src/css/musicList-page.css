@@ -1,9 +1,10 @@
 body{
     font-family: 'Press Start 2P', cursive;
-    background-color: #312f31;
+    background-color: #503f49;
     color: white;
 
 }
+
 h1{
     text-align: center;
 }
@@ -14,14 +15,27 @@ h1{
     height: 100px;
 }
 
-.Pbutton {
+.Pbutton{
     margin-top: 1%;
     float: right;
     cursor: pointer;
-    background-color: #455065;
+    background-color: #8a7f85;
     color: white;
     padding: 10px;
-    width: 150px;
+    width: 200px;
+    height: 50px;
+    border: none;
+    margin-right: 1%;
+}
+
+.Wbutton {
+    margin-top: 1%;
+    float: right;
+    cursor: pointer;
+    background-color: #8a7f85;
+    color: white;
+    padding: 10px;
+    width: 200px;
     height: 50px;
     border: none;
     margin-right: 1%;
@@ -30,14 +44,16 @@ h1{
 .Zbutton{
     margin-top: 1%;
     cursor: pointer;
-    background-color: red;
+    background-color: #d8322c;
     color: black;
     padding: 10px;
     width: max-content;
     height: 50px;
     border: none;
     margin-right: 1%;
+    color: white;
 }
+
 #button-div{
     text-align: center;
     margin: 0.5%;
@@ -59,7 +75,7 @@ h1{
 .delete-button{
     float: right;
     cursor: pointer;
-    background-color: #ff0f1b;
+    background-color: #d8322c;
     color: white;
     padding: 1%;
     width: 100%;
@@ -80,21 +96,8 @@ h1{
     
 }
 
-.Wbutton {
-    margin-top: 1%;
-    float: right;
-    cursor: pointer;
-    background-color: #455065;
-    color: white;
-    padding: 10px;
-    width: 150px;
-    height: 50px;
-    border: none;
-    margin-right: 1%;
-}
-
 #musicList-conteiner{
-    background-color: #8c8f8f;
+    background-color:  #8a7f85;
     padding: 1%;
     width: 90%;
     height: max-content;
@@ -106,7 +109,7 @@ h1{
 
 .listElement{
     cursor: pointer;
-    background-color: #adadad;
+    background-color:  #d8d6d4;
     padding: 1%;
     width: 90%;
     height: max-content;
