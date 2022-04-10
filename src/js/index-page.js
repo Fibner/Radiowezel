@@ -34,14 +34,14 @@ window.onload = function () {
 
 //Get breaks from json file
 //CHANGE TEST BEFORE PUBLISH TO: breaks.json
-$.getJSON("src/js/test.json", function (data) {                                                             //TU DO ZMIANY!!!!
+$.getJSON("src/js/breaks.json", function (data) {                                                             //TU DO ZMIANY!!!!
     breaks = data["breaks"];
 });
 
 //Repeat every 100ms
 function repeater() {
     setInterval(function () {
-        if (checkDay() || 1 == 1) {                                                                           //TU DO ZMIANY!!!!
+        if (checkDay()) {                                                                           //TU DO ZMIANY!!!!
             if (auto) checkBreak();
             checkMidnight();
         } else {
@@ -173,11 +173,11 @@ function muteMusicAnim() {
             player.setVolume(player.getVolume() - 2)
         } else {
             player.pauseVideo();
+            muteAnim = false;
         }
     } else {
         player.mute();
         player.pauseVideo();
-        muteAnim = false;
     }
 }
 
