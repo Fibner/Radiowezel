@@ -34,16 +34,17 @@ window.onload = function () {
 
 //Get breaks from json file
 //CHANGE TEST BEFORE PUBLISH TO: breaks.json
-$.getJSON("src/js/breaks.json", function (data) {                                                             //TU DO ZMIANY!!!!
+$.getJSON("src/js/test.json", function (data) {                                                             //TU DO ZMIANY!!!!
     breaks = data["breaks"];
 });
 
 //Repeat every 100ms
 function repeater() {
     setInterval(function () {
-        if (checkDay()) {                                                                           //TU DO ZMIANY!!!!
+        if (checkDay() || 1 == 1) {                                                                           //TU DO ZMIANY!!!!
             if (auto) checkBreak();
-        }else{
+            checkMidnight();
+        } else {
             player.pauseVideo();
         }
     }, 100)
@@ -83,6 +84,14 @@ function checkDay() {
 function checkTime() {
     const date = new Date();
     return date.toLocaleTimeString('pl-PL');
+}
+function checkMidnight() {
+    if (checkTime() == "00:00:00" || 1==1) {
+        $.ajax({
+            url: "php/playlistRandom",
+            method: "get"
+        })
+    }
 }
 // function weekendMode() {
 //     clearInterval(repeater)
@@ -141,8 +150,8 @@ async function playNewSong(event) {
     songID = await getSong();
     removeSong(songID['id']);
     player.loadVideoById(songID['songId']);
-//     player.setVolume(0);
-//     player.playVideo();
+    //     player.setVolume(0);
+    //     player.playVideo();
 }
 
 function onPlayerStateChange(event) {
@@ -158,14 +167,14 @@ function onPlayerError() {
 }
 
 function muteMusicAnim() {
-    if(muteAnim){
+    if (muteAnim) {
         if (player.getVolume() != 0) {
             // console.log(player.getVolume());
             player.setVolume(player.getVolume() - 2)
         } else {
             player.pauseVideo();
         }
-    }else{
+    } else {
         player.mute();
         player.pauseVideo();
         muteAnim = false;
@@ -175,7 +184,7 @@ function muteMusicAnim() {
 function unMuteMusicAnim() {
     muteAnim = true;
     player.playVideo();
-    if(player.isMuted()){
+    if (player.isMuted()) {
         player.setVolume(0)
         player.unMute()
     }
