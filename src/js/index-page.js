@@ -7,6 +7,7 @@ var breaks = [];
 var auto = true;
 var emergencyMode = false;
 var delay = 0;
+var muteAnim = false;
 
 window.onload = function () {
     document.querySelector("#emergency").addEventListener("click", emergency);
@@ -33,15 +34,14 @@ window.onload = function () {
 
 //Get breaks from json file
 //CHANGE TEST BEFORE PUBLISH TO: breaks.json
-$.getJSON("src/js/test.json", function (data) {
+$.getJSON("src/js/breaks.json", function (data) {                                                             //TU DO ZMIANY!!!!
     breaks = data["breaks"];
 });
 
 //Repeat every 100ms
 function repeater() {
     setInterval(function () {
-        // console.log(checkDay());
-        if (checkDay()) {
+        if (checkDay()) {                                                                           //TU DO ZMIANY!!!!
             if (auto) checkBreak();
         }else{
             player.pauseVideo();
@@ -77,7 +77,6 @@ function checkBreak() {
 function checkDay() {
     if (checkTime() == "07:00:00") console.log("Tu trzeba losować");
     var date = new Date();
-    // console.log(date.getDay());
     if (date.getDay() > 0 && date.getDay() < 6) return true;
     return false
 }
@@ -85,12 +84,12 @@ function checkTime() {
     const date = new Date();
     return date.toLocaleTimeString('pl-PL');
 }
-function weekendMode() {
-    clearInterval(repeater)
-    const weekendRepeater = setInterval(function () {
-        if (checkDay() > 0 && checkDay() < 6) repeater;
-    }, 1000)
-}
+// function weekendMode() {
+//     clearInterval(repeater)
+//     const weekendRepeater = setInterval(function () {
+//         if (checkDay() > 0 && checkDay() < 6) repeater;
+//     }, 1000)
+// }
 function logOut() {
     $.ajax({
         url: "php/logout",
@@ -138,12 +137,12 @@ function removeSong(id) {
     })
 }
 
-async function playNewSong() {
+async function playNewSong(event) {
     songID = await getSong();
     removeSong(songID['id']);
     player.loadVideoById(songID['songId']);
-    player.setVolume(0);
-    player.playVideo();
+//     player.setVolume(0);
+//     player.playVideo();
 }
 
 function onPlayerStateChange(event) {
@@ -159,15 +158,22 @@ function onPlayerError() {
 }
 
 function muteMusicAnim() {
-    if (player.getVolume() != 0) {
-        // console.log(player.getVolume());
-        player.setVolume(player.getVolume() - 2)
-    } else {
+    if(muteAnim){
+        if (player.getVolume() != 0) {
+            // console.log(player.getVolume());
+            player.setVolume(player.getVolume() - 2)
+        } else {
+            player.pauseVideo();
+        }
+    }else{
+        player.mute();
         player.pauseVideo();
+        muteAnim = false;
     }
 }
 
 function unMuteMusicAnim() {
+    muteAnim = true;
     player.playVideo();
     if(player.isMuted()){
         player.setVolume(0)
