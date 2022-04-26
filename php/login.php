@@ -16,7 +16,7 @@ if($_POST){
          foreach ($result as $value){
              $users = ["{$value['login']}"=>"{$value['password']}"];
          }
-         if($users[$login] == $password){
+         if(password_verify($password, $users[$login])){
              $_SESSION['admin'] = true;
              echo json_encode(true);
          }else{
