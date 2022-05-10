@@ -1,8 +1,6 @@
 <?php
-session_start();
-if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
-    header("Location: pages/login");
-}
+require_once "../php/checkPermission.php"; //session_start();
+checkPermission(1);
 ?>
 <!DOCTYPE html>
 <html lang="en">

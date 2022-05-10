@@ -16,7 +16,7 @@ window.onload = function () {
                 console.log("Trying to login...");
                 console.log(xml.responseText);
                 if(xml.responseText == "false") return wrongData();
-                location.reload();
+                if(xml.responseText == "true") location.reload();
             },
             error: function(){
                 alertModule.alertbox(2,"Err with connection.");

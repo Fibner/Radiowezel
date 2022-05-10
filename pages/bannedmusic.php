@@ -1,3 +1,7 @@
+<?php
+require_once "../php/checkPermission.php"; //session_start();
+checkPermission(1);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

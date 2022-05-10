@@ -1,0 +1,133 @@
+* {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+
+#menu-section {
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+}
+
+.Pbutton{
+    margin-top: 0.5%;
+    float: right;
+    cursor: pointer;
+    background-color: #8a7f85;
+    color: white;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    border: none;
+    margin-right: 1%;
+    font-size: 15px;
+}
+
+.Wbutton {
+    margin-top: 0.5%;
+    float: right;
+    cursor: pointer;
+    background-color: #8a7f85;
+    color: white;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    border: none;
+    margin-right: 1%;
+    font-size: 15px;
+}
+
+#link-div {
+    margin-top: 10%;
+    text-align: center;
+}
+
+#link-input {
+    margin-top: 5%;
+}
+
+.lin {
+    border: none;
+    background-color: #8a7f85;
+    height: 50px;
+    width: 500px;
+}
+
+.Lbutton {
+    cursor: pointer;
+    background-color: #8a7f85;
+    color: white;
+    width: 200px;
+    height: 50px;
+    border: none;
+    
+}
+
+hr {
+    width: 50%;
+}
+
+body {
+    overflow-y: hidden; 
+    overflow-x: hidden;
+    background-color: #503f49;
+    padding: 0%;
+    margin: 0%;
+}
+
+/* Mobile menu */
+#mobile-menu{
+    display: none;
+    /* background-color: #503f49; */
+    height: 100%;
+    width: 75%;
+}
+
+#mobile-menu-tab{
+    float: left;
+    width: 90%;
+    height: 100%;
+    background-color: green;
+    text-align: center;
+}
+
+#mobile-menu-icon{
+    margin-top: 3%;
+    text-align: center;
+    float: right;
+    background-color: rgb(70, 0, 128);
+    width: 10%;
+    height: 5%;
+}
+#mobile-menu-buttons{
+    margin-top: 100%;
+    height: 10%;
+}
+.mobile-menu-button{
+    width: 75%;
+    height: 50%;
+    margin: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+    #menu-section{
+        display: none;
+    }
+    #mobile-menu{
+        display: block;
+        position: absolute;
+    }
+    #main{
+        padding-top: 25%;
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 10px;
+        text-align: center;
+    }
+    #now-playing{
+        padding: 3%;
+    }
+}

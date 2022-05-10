@@ -2,7 +2,7 @@
 include "dbconnection.php";
 include "playlistDelete.php";
 
-$sql = "SELECT id FROM music ORDER BY rand() LIMIT 10;";
+$sql = "SELECT id FROM music ORDER BY rand() LIMIT 25;";
 $random_Music = $db -> query($sql);
 
 

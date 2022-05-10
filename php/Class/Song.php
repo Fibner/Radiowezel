@@ -1,5 +1,6 @@
 <?php
 class Song{
+    public $id;
     public $songId;
     public $title;
     public $date;

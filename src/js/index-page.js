@@ -16,15 +16,6 @@ window.onload = function () {
     document.querySelector("#auto").checked = true;
     document.querySelector("#next-button").addEventListener("click", playNewSong);
     document.querySelector("#logout-button").addEventListener("click", logOut);
-    document.querySelector("#playlist-button").addEventListener("click", function () {
-        location.href = "pages/playlist";
-    });
-    document.querySelector("#add-button").addEventListener("click", function () {
-        location.href = "pages/addsong";
-    });
-    document.querySelector('#list-button').addEventListener("click", function () {
-        location.href = "pages/musicList";
-    })
 
     var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
@@ -41,7 +32,7 @@ $.getJSON("src/js/breaks.json", function (data) {                               
 //Repeat every 100ms
 function repeater() {
     setInterval(function () {
-        if (checkDay()) {                                                                           //TU DO ZMIANY!!!!
+        if (checkDay()) {                                                                           
             if (auto) checkBreak();
             checkMidnight();
         } else {
@@ -86,28 +77,23 @@ function checkTime() {
     return date.toLocaleTimeString('pl-PL');
 }
 function checkMidnight() {
-    if (checkTime() == "00:00:00" || 1==1) {
+    if (checkTime() == "00:00:00") {
         $.ajax({
             url: "php/playlistRandom",
             method: "get"
         })
     }
 }
-// function weekendMode() {
-//     clearInterval(repeater)
-//     const weekendRepeater = setInterval(function () {
-//         if (checkDay() > 0 && checkDay() < 6) repeater;
-//     }, 1000)
-// }
+
 function logOut() {
     $.ajax({
         url: "php/logout",
         type: "POST",
         success: function () {
-            location.href = "index"
+            location.href = "pages/login"
         }
     }).fail(function () {
-        alert.alertbox(2, "Błąd serwera");
+        alertbox(2, "Błąd serwera");
     })
 }
 
@@ -150,8 +136,13 @@ async function playNewSong(event) {
     songID = await getSong();
     removeSong(songID['id']);
     player.loadVideoById(songID['songId']);
-    //     player.setVolume(0);
-    //     player.playVideo();
+    $.ajax({
+        url: "php/addsongtohistory",
+        method: "POST",
+        data:{
+            song: songID['id']
+        }
+    })
 }
 
 function onPlayerStateChange(event) {
@@ -162,14 +153,23 @@ function onPlayerStateChange(event) {
     }
 }
 
-function onPlayerError() {
-    console.log("BRAK PLAYLISTY");
+function onPlayerError(event) {
+    if(event.data == 2){
+        $.ajax({
+            url: "php/playlistRandom",
+            method: "get",
+            success: function(){
+                playNewSong();
+            }
+        })
+    }else{
+        playNewSong();
+    }
 }
 
 function muteMusicAnim() {
     if (muteAnim) {
         if (player.getVolume() != 0) {
-            // console.log(player.getVolume());
             player.setVolume(player.getVolume() - 2)
         } else {
             player.pauseVideo();

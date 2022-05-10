@@ -1,0 +1,1 @@
+- logowanie psuje sie jak za szybko kliknie sie pare razy enter

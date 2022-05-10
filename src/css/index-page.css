@@ -2,7 +2,8 @@ body{
     font-family: 'Press Start 2P', cursive;
     background-color: #503f49;
     color: white;
- 
+    overflow-y: hidden; 
+    overflow-x: hidden; 
 }
 
 #menu-section{

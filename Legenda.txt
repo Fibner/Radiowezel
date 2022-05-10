@@ -1,0 +1,8 @@
+Uprawnienia:
+0 - użytkownik
+1 - admin
+2 - odtwarzacz
+
+Status:
+0 - odtworzony
+1 - trwa

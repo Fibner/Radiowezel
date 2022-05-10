@@ -1,8 +1,6 @@
 <?php
-session_start();
-if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
-    header("Location: pages/login");
-}
+require_once "php/checkPermission.php";
+checkPermission(2);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,20 +15,11 @@ if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Player</title>
 </head>
 
 <body>
     <div id="menu-section">
-        <div id="add-div" class="menu-button-div">
-            <input type="button" class="Pbutton" name="button" id="add-button" value="DODAJ" />
-        </div>
-        <div id="playlist-div" class="menu-button-div">
-            <input type="button" class="Pbutton" name="button" id="playlist-button" value="PLAYLISTA" />
-        </div>
-        <div id="playlist-div" class="menu-button-div">
-            <input type="button" class="Pbutton" name="button" id="list-button" value="LISTA" />
-        </div>
         <div id="logout-div" class="menu-button-div">
             <input type="button" class="Wbutton" name="button" id="logout-button" value="WYLOGUJ" />
         </div>

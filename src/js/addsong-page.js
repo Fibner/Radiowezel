@@ -73,3 +73,15 @@ function checkLink(link) {
     }
     return false;
 }
+
+function logOut() {
+    $.ajax({
+        url: "php/logout",
+        type: "POST",
+        success: function () {
+            location.href = "pages/login"
+        }
+    }).fail(function () {
+        alertbox(2, "Błąd serwera");
+    })
+}
