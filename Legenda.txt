@@ -6,3 +6,8 @@ Uprawnienia:
 Status:
 0 - odtworzony
 1 - trwa
+
+Komendy:
+0 - zatrzymaj
+1 - wznów
+2 - następny

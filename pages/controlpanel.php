@@ -18,7 +18,7 @@ checkPermission(1);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <title>Dodaj piosenkę do bazy</title>
+    <title>Panel sterowania</title>
 </head>
 
 <body>
@@ -59,6 +59,13 @@ checkPermission(1);
     <div id="main">
         <div>Teraz odtwarzane:</div>
         <div id="now-playing"><?php DbRepo::getHistory(false) ?></div>
+        <div id="main-buttons">
+            <button id="pause">Zatrzymaj</button>
+            <br>
+            <button id="play">Wznów</button>
+            <br>
+            <button id="next">Następny</button>
+        </div>
     </div>
     <script src="../src/js/jquery-3.6.0.js"></script>
     <script type="module" src="../src/js/controlpanel-page.js"></script>

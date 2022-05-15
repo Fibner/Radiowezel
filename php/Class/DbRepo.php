@@ -94,4 +94,28 @@ class DbRepo
             return json_encode(false);
         }
     }
+    public static function executeCommand($command){
+        switch($command){
+            case 'pause':
+                self::$dbconn->query("DELETE FROM commands");
+                self::$dbconn->query("INSERT INTO commands (command, executedBy) VALUES (0, 1)");
+                break;
+            case 'play':
+                self::$dbconn->query("DELETE FROM commands");
+                self::$dbconn->query("INSERT INTO commands (command, executedBy) VALUES (1, 1)");
+                break;
+            case 'next':
+                self::$dbconn->query("INSERT INTO commands (command, executedBy) VALUES (2, 1)");
+                break;
+            case 'get':
+                try{
+                    $result = self::$dbconn->query("SELECT * FROM commands LIMIT 1")->fetch_assoc();
+                    if($result != NULL){
+                        echo $result["command"];
+                        self::$dbconn->query("DELETE FROM commands");
+                    }
+                }catch(Exception $e){}
+                break;
+        }
+    }
 }

@@ -8,6 +8,7 @@ var auto = true;
 var emergencyMode = false;
 var delay = 0;
 var muteAnim = false;
+var commandControl = false;
 
 window.onload = function () {
     document.querySelector("#emergency").addEventListener("click", emergency);
@@ -32,12 +33,16 @@ $.getJSON("src/js/breaks.json", function (data) {                               
 //Repeat every 100ms
 function repeater() {
     setInterval(function () {
-        if (checkDay()) {                                                                           
-            if (auto) checkBreak();
-            checkMidnight();
-        } else {
-            player.pauseVideo();
+        if(!commandControl){
+            if (checkDay()) {                                                                           
+                if (auto) checkBreak();
+                checkMidnight();
+            } else {
+                player.pauseVideo();
+            }
         }
+        checkCommand();
+        console.clear();
     }, 100)
 }
 
@@ -134,6 +139,16 @@ function removeSong(id) {
 
 async function playNewSong(event) {
     songID = await getSong();
+    if(songID == null){
+        $.ajax({
+            url: "php/playlistRandom",
+            method: "get",
+            success: function(){
+                playNewSong();
+            }
+        })
+        return;
+    }
     removeSong(songID['id']);
     player.loadVideoById(songID['songId']);
     $.ajax({
@@ -196,4 +211,29 @@ function emergency() {
     auto = false;
     player.stopVideo();
     document.querySelector("#manual").checked = true;
+}
+
+function checkCommand(){
+    $.ajax({
+        url: "php/commandExecution",
+            method: "POST",
+            data:{
+                command: 'get'
+            },
+            success: function(xml){
+                switch(xml){
+                    case '0':
+                        player.pauseVideo();
+                        commandControl = true;
+                        break;
+                    case '1':
+                        player.playVideo();
+                        commandControl = false;
+                        break;
+                    case '2':
+                        playNewSong();
+                        break;
+                }
+            }
+    })
 }

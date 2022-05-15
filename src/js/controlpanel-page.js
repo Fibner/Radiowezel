@@ -65,3 +65,33 @@ document.querySelector("#mobile-menu-icon").addEventListener("click", function (
     };
 
 })
+
+//to idzie skrócić
+document.querySelector('#pause').addEventListener('click', function(){
+    $.ajax({
+        url: "../php/commandExecution",
+        method: "POST",
+        data:{
+            command: 'pause'
+        }
+    })
+})
+document.querySelector('#play').addEventListener('click', function(){
+    $.ajax({
+        url: "../php/commandExecution",
+        method: "POST",
+        data:{
+            command: 'play'
+        }
+    })
+})
+document.querySelector('#next').addEventListener('click', function(){
+    $.ajax({
+        url: "../php/commandExecution",
+        method: "POST",
+        data:{
+            command: 'next'
+        }
+    })
+})
+//
