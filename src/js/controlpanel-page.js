@@ -1,3 +1,13 @@
+var stopSure = false;
+setInterval(function(){
+    $.ajax({
+        url: "../php/getAcctualSong",
+        method: "POST",
+        success: function(xml){
+            document.querySelector("#now-playing").innerText = xml;
+        }
+    })
+}, 1000)
 window.onload = function () {
 
     document.querySelectorAll("#logout-button")[0].addEventListener("click", logOut);
@@ -91,6 +101,20 @@ document.querySelector('#next').addEventListener('click', function(){
         method: "POST",
         data:{
             command: 'next'
+        }
+    })
+})
+document.querySelector('#stop').addEventListener('click', function(){
+    if(!stopSure){
+        document.querySelector('#stop').innerText = "Na pewno?";
+        stopSure = true;
+        return;
+    }
+    $.ajax({
+        url: "../php/commandExecution",
+        method: "POST",
+        data:{
+            command: 'stop'
         }
     })
 })

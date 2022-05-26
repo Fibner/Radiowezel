@@ -1,6 +1,6 @@
 <?php
 require_once "../php/checkPermission.php"; //session_start();
-checkPermission(1);
+checkPermission("addSongSite");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,8 +29,11 @@ checkPermission(1);
         <div id="playlist-div" class="menu-button-div">
             <input type="button" class="Pbutton" name="button" id="list-button" value="LISTA" />
         </div>
+        <div id="history-div" class="menu-button-div">
+            <input type="button" class="Wbutton" name="button" id="history-button" value="HISTORIA" />
+        </div>
         <div id="logout-div" class="menu-button-div">
-            <input type="button" class="Wbutton" name="button" value="WYLOGUJ" />
+            <input type="button" class="Wbutton" name="button" id="logout-button" value="WYLOGUJ" />
         </div>
     </div>
 

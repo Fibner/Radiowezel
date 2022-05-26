@@ -11,6 +11,9 @@ if (isset($_SESSION['user'])) {
         case 2:
             header("Location: ../index");
             break;
+        case 0:
+            header("Location: addsong");
+            break;
     }
 }
 ?>

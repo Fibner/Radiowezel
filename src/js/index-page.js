@@ -233,6 +233,9 @@ function checkCommand(){
                     case '2':
                         playNewSong();
                         break;
+                    case '3':
+                        emergency();
+                        break;
                 }
             }
     })

@@ -2,7 +2,7 @@
 require "../php/checkPermission.php"; //sestion_start();
 require "../php/dbconnection.php";
 require "../php/Class/DbRepo.php";
-checkPermission(1);
+checkPermission('controlPanelSite');
 ?>
 
 <!DOCTYPE html>
@@ -65,6 +65,8 @@ checkPermission(1);
             <button id="play">Wznów</button>
             <br>
             <button id="next">Następny</button>
+            <br>
+            <button id="stop">-Zatrzymaj-</button>
         </div>
     </div>
     <script src="../src/js/jquery-3.6.0.js"></script>

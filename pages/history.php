@@ -2,7 +2,7 @@
 require_once "../php/checkPermission.php"; //session_start();
 require_once "../php/dbconnection.php";
 require_once "../php/Class/DbRepo.php";
-checkPermission(1);
+checkPermission("historySite");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +31,7 @@ checkPermission(1);
             <input type="button" class="Pbutton" name="button" id="playlist-button" value="PLAYLISTA" />
         </div>
         <div id="logout-div" class="menu-button-div">
-            <input type="button" id="logout-button" class="Wbutton" name="button" value="WYLOGUJ" />
+            <input type="button" id="logout-button" class="Wbutton" name="button" id="logout-button" value="WYLOGUJ" />
         </div>
     </div><br>
 

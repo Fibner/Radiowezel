@@ -1,6 +1,6 @@
 <?php
 require_once "../php/checkPermission.php"; //session_start();
-checkPermission(1);
+checkPermission("musicListSite");
 ?>
 <!DOCTYPE html>
 <html lang="en">

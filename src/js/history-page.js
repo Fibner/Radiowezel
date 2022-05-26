@@ -9,6 +9,7 @@ window.onload = function(){
     document.querySelector('#playlist-button').addEventListener("click", function(){
         location.href = "playlist";
     });
+    document.querySelector("#logout-button").addEventListener("click", logOut);
     
     document.querySelector('#ban-button').addEventListener("click", function(){
       location.href = "bannedmusic";
@@ -17,12 +18,10 @@ window.onload = function(){
 
 function logOut() {
     $.ajax({
-        url: "php/logout",
+        url: "../php/logout",
         type: "POST",
         success: function () {
-            location.href = "pages/login"
+            location.href = "login"
         }
-    }).fail(function () {
-        alertbox(2, "Błąd serwera");
     })
 }

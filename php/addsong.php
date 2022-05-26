@@ -6,7 +6,7 @@ if ($_POST) {
     require "Class/DbRepo.php";
     require "Class/Song.php";
 
-    if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+    if (isset($_SESSION['user'])) {
         if (isset($_POST['link']) && $_POST['link'] != "") {
             $link = $_POST['link'];
             if (checkLink($link)) {

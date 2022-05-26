@@ -8,7 +8,11 @@ window.onload = function () {
     });
     document.querySelector('#list-button').addEventListener("click", function(){
         location.href = "musicList";
-    })
+    });
+    document.querySelector('#history-button').addEventListener("click", function () {
+        location.href = "history";
+    });
+    document.querySelector("#logout-button").addEventListener("click", logOut);
     
     document.querySelector("#add-button").addEventListener("click", function () {
         let link = document.querySelector("#link-input");
@@ -76,12 +80,10 @@ function checkLink(link) {
 
 function logOut() {
     $.ajax({
-        url: "php/logout",
+        url: "../php/logout",
         type: "POST",
         success: function () {
-            location.href = "pages/login"
+            location.href = "login"
         }
-    }).fail(function () {
-        alertbox(2, "Błąd serwera");
     })
 }

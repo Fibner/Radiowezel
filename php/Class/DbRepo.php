@@ -107,6 +107,9 @@ class DbRepo
             case 'next':
                 self::$dbconn->query("INSERT INTO commands (command, executedBy) VALUES (2, 1)");
                 break;
+            case 'stop':
+                self::$dbconn->query("INSERT INTO commands (command, executedBy) VALUES (3, 1)");
+                break;
             case 'get':
                 try{
                     $result = self::$dbconn->query("SELECT * FROM commands LIMIT 1")->fetch_assoc();

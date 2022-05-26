@@ -1,6 +1,6 @@
 <?php
 require_once "php/checkPermission.php";
-checkPermission(2);
+checkPermission("indexSite");
 ?>
 <!DOCTYPE html>
 <html lang="en">
