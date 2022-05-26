@@ -5,6 +5,7 @@ if ($_POST) {
     require "Class/YoutubeAPI.php";
     require "Class/DbRepo.php";
     require "Class/Song.php";
+    require "Class/User.php";
 
     if (isset($_SESSION['user'])) {
         if (isset($_POST['link']) && $_POST['link'] != "") {

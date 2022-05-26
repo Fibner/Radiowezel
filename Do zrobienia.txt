@@ -1,1 +1,6 @@
 - logowanie psuje sie jak za szybko kliknie sie pare razy enter
+- zeby piosenki nie szły za często
+- wysylanie prosby o dodanie jako user
+- przeglad prosb jako admin
+- tworzenie konta
+- ustawienia konta

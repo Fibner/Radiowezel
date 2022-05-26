@@ -3,17 +3,17 @@ window.onload = function(){
     document.querySelector("#add-button").addEventListener("click", function(){
         location.href = "addsong";
     });
-    document.querySelector("#index-button").addEventListener("click", function(){
-      location.href = "../index";
-    });
+    if(document.querySelector("#index-button")){
+        document.querySelector("#index-button").addEventListener("click", function(){
+            location.href = "../index";
+        });
+    }
+    if(document.querySelector("#playlist-button")){
     document.querySelector('#playlist-button').addEventListener("click", function(){
         location.href = "playlist";
     });
+    }
     document.querySelector("#logout-button").addEventListener("click", logOut);
-    
-    document.querySelector('#ban-button').addEventListener("click", function(){
-      location.href = "bannedmusic";
-    });
 }
 
 function logOut() {

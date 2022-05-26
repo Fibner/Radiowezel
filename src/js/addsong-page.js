@@ -1,14 +1,20 @@
 import alertModule from "./alertbox.js";
 window.onload = function () {
-    document.querySelector("#playlist-button").addEventListener("click", function(){
-        location.href = "playlist";
-    });
-    document.querySelector("#index-button").addEventListener("click", function(){
-        location.href = "../index";
-    });
-    document.querySelector('#list-button').addEventListener("click", function(){
-        location.href = "musicList";
-    });
+    if(document.querySelector("#playlist-button")){
+        document.querySelector("#playlist-button").addEventListener("click", function(){
+            location.href = "playlist";
+        });
+    }
+    if(document.querySelector("#index-button")){
+        document.querySelector("#index-button").addEventListener("click", function(){
+            location.href = "../index";
+        });
+    }
+    if(document.querySelector("#index-button")){
+        document.querySelector('#list-button').addEventListener("click", function(){
+            location.href = "musicList";
+        });
+    }
     document.querySelector('#history-button').addEventListener("click", function () {
         location.href = "history";
     });

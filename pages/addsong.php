@@ -1,5 +1,6 @@
 <?php
 require_once "../php/checkPermission.php"; //session_start();
+require_once "../php/Class/User.php";
 checkPermission("addSongSite");
 ?>
 <!DOCTYPE html>
@@ -20,15 +21,19 @@ checkPermission("addSongSite");
 
 <body>
     <div id="menu-section">
-    <div id="index-div" class="menu-button-div">
+        <?php
+        if(unserialize($_SESSION['user'])->getType() == 1 || unserialize($_SESSION['user'])->login == "kpieczka"){
+            echo '<div id="index-div" class="menu-button-div">
             <input type="button" id="index-button" class="Pbutton" name="button" value="GŁÓWNA" />
         </div>
         <div id="playlist-div" class="menu-button-div">
             <input type="button" id="playlist-button" class="Pbutton" name="button" value="PLAYLISTA" />
         </div>
-        <div id="playlist-div" class="menu-button-div">
+        <div id="list-div" class="menu-button-div">
             <input type="button" class="Pbutton" name="button" id="list-button" value="LISTA" />
-        </div>
+        </div>';
+        }
+        ?>
         <div id="history-div" class="menu-button-div">
             <input type="button" class="Wbutton" name="button" id="history-button" value="HISTORIA" />
         </div>

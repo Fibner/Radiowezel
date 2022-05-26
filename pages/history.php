@@ -6,6 +6,7 @@ checkPermission("historySite");
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,16 +20,21 @@ checkPermission("historySite");
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <title>Historia piosenek</title>
 </head>
+
 <body>
     <div id="menu-section">
-        <div id="index-div" class="menu-button-div">
-            <input type="button" id="index-button" class="Pbutton" name="button" value="GŁÓWNA" />
-        </div>
+        <?php
+        if (unserialize($_SESSION["user"])->getType() == 1) {
+            echo '<div id="index-div" class="menu-button-div">
+                  <input type="button" id="index-button" class="Pbutton" name="button" value="GŁÓWNA" />
+                  </div>
+                  <div id="playlist-div" class="menu-button-div">
+                  <input type="button" class="Pbutton" name="button" id="playlist-button" value="PLAYLISTA" />
+                  </div>';
+        }
+        ?>
         <div id="playlist-div" class="menu-button-div">
             <input type="button" id="add-button" class="Pbutton" name="button" value="DODAJ" />
-        </div>
-        <div id="playlist-div" class="menu-button-div">
-            <input type="button" class="Pbutton" name="button" id="playlist-button" value="PLAYLISTA" />
         </div>
         <div id="logout-div" class="menu-button-div">
             <input type="button" id="logout-button" class="Wbutton" name="button" id="logout-button" value="WYLOGUJ" />
@@ -39,13 +45,18 @@ checkPermission("historySite");
     <br>
     <div id="musicList-conteiner">
         <table>
-            <tr><th>Piosenka</th><th>Status</th><th>Data puszczenia</th></tr>
+            <tr>
+                <th>Piosenka</th>
+                <th>Status</th>
+                <th>Data puszczenia</th>
+            </tr>
             <?php
-                DbRepo::getHistory(true);
+            DbRepo::getHistory(true);
             ?>
         </table>
     </div>
     <script src="../src/js/jquery-3.6.0.js"></script>
     <script src="../src/js/history-page.js"></script>
 </body>
+
 </html>
