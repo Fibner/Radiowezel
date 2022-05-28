@@ -42,14 +42,15 @@ if (isset($_SESSION['user'])) {
             <label for="login-input">LOGIN</label>
             <input type="text" name="login-input" id="login-input">
             <br>
-            <label for="password-input">HASŁO</label>
+            <label for="password-input">HASLO</label>
             <input type="password" name="password-input" id="password-input">
             <br>
             <button id="submit" class="button">ZALOGUJ</button>
         </form>
-    </section>
-  
 
+        <button class="button"><a href="registerPage.php">REJESTRACJA</a></button>
+
+    </section>
     <script src="../src/js/jquery-3.6.0.js"></script>
     <script defer="true" type="module" src="../src/js/login-page.js"></script>
 </body>
