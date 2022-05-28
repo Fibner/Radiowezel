@@ -11,8 +11,9 @@ class DbRepo
     }
     public static function addSong(&$Song)
     {
+        $date = date('Y-m-d H:i:s', strtotime($Song->date));
         try {
-            if (self::$dbconn->query("INSERT INTO `music`(`songId`, `title`, `date`, `link`, `thumbnail`, `viewCount`, `likeCount`, `dislikeCount`, `commentCount`) VALUES ('{$Song->songId}'," . '"' . $Song->title . '"' . ",'{$Song->date}','{$Song->link}','{$Song->thumbnail}',{$Song->viewCount},{$Song->likeCount},{$Song->dislikeCount},{$Song->commentCount})")) return true;
+            if (self::$dbconn->query("INSERT INTO `music`(`songId`, `title`, `date`, `link`, `thumbnail`, `viewCount`, `likeCount`, `dislikeCount`, `commentCount`, `addBy`) VALUES ('{$Song->songId}'," . '"' . $Song->title . '"' . ",'{$date}','{$Song->link}','{$Song->thumbnail}',{$Song->viewCount},{$Song->likeCount},{$Song->dislikeCount},{$Song->commentCount},".unserialize($_SESSION['user'])->getId().")")) return true;
             else return false;
         } catch (Exception $e) {
             return false;
