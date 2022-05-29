@@ -13,8 +13,14 @@ class DbRepo
     {
         $date = date('Y-m-d H:i:s', strtotime($Song->date));
         try {
-            if (self::$dbconn->query("INSERT INTO `music`(`songId`, `title`, `date`, `link`, `thumbnail`, `viewCount`, `likeCount`, `dislikeCount`, `commentCount`, `addBy`) VALUES ('{$Song->songId}'," . '"' . $Song->title . '"' . ",'{$date}','{$Song->link}','{$Song->thumbnail}',{$Song->viewCount},{$Song->likeCount},{$Song->dislikeCount},{$Song->commentCount},".unserialize($_SESSION['user'])->getId().")")) return true;
-            else return false;
+            if(unserialize($_SESSION['user'])->getType() == 0){
+                if (self::$dbconn->query("INSERT INTO `music`(`songId`, `title`, `date`, `link`, `thumbnail`, `viewCount`, `likeCount`, `dislikeCount`, `commentCount`, `addBy`) VALUES ('{$Song->songId}'," . '"' . $Song->title . '"' . ",'{$date}','{$Song->link}','{$Song->thumbnail}',{$Song->viewCount},{$Song->likeCount},{$Song->dislikeCount},{$Song->commentCount},".unserialize($_SESSION['user'])->getId().")")) return true;
+                else return false;
+            }
+            if(unserialize($_SESSION['user'])->getType() == 1){
+                if (self::$dbconn->query("INSERT INTO `music`(`songId`, `title`, `date`, `link`, `thumbnail`, `viewCount`, `likeCount`, `dislikeCount`, `commentCount`, `addBy`, `acceptBy`) VALUES ('{$Song->songId}'," . '"' . $Song->title . '"' . ",'{$date}','{$Song->link}','{$Song->thumbnail}',{$Song->viewCount},{$Song->likeCount},{$Song->dislikeCount},{$Song->commentCount},".unserialize($_SESSION['user'])->getId().", ".unserialize($_SESSION['user'])->getId().")")) return true;
+                else return false;
+            }
         } catch (Exception $e) {
             return false;
         }

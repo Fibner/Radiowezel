@@ -32,8 +32,8 @@ window.onload = function () {
                     link: link.value
                 },
                 success: function (data, string, xml) {
-                    console.log("Sending song to playlist...");
-                     console.log(xml.responseText);
+                    // console.log("Sending song to playlist...");
+                    // console.log(xml.responseText);
                     if (xml.responseText == "false"){
                         return alertModule.alertbox(0, "Nie poprawny link do youtube.");
                     }
@@ -52,7 +52,11 @@ window.onload = function () {
                     }
 
                     if(xml.responseText == "err"){
-                        return alertModule.alertbox(2, "Err with connection.");
+                        return alertModule.alertbox(2, "Błąd serwera.");
+                    }
+
+                    if(xml.responseText == "req"){
+                        return alertModule.alertbox(1, "Utwór został przesłany. Zostanie dodany do bazy po poprawnej weryfikacji.");
                     }
                 },
                 error: function () {

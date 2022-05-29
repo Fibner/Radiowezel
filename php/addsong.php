@@ -12,23 +12,27 @@ if ($_POST) {
             $link = $_POST['link'];
             if (checkLink($link)) {
                 try{
-                    $song = YoutubeAPI::getSongInfo($link);
-                    if(DbRepo::checkIfItIs($song->songId)){
-                        echo "is";
-                        return;
-                    } 
+                    $song = YoutubeAPI::getSongInfo($link); 
                     if(!$song){
                         echo json_encode(false);
                         return;
                     }
+                    if(DbRepo::checkIfItIs($song->songId)){
+                        echo "is";
+                        return;
+                    }
                     if($song->checkCategory()){
                         if(DbRepo::addSong($song)){
-                            echo json_encode(true);
+                            if(unserialize($_SESSION['user'])->getType() == 1){
+                                echo json_encode(true);
+                                return;
+                            }
+                            echo "req";
                             return;
                         }else{
                             echo "err";
                             return;
-                        };
+                        }
                     }else{
                         echo "wrg";
                         return;

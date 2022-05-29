@@ -41,7 +41,7 @@ checkPermission("musicListSite");
         
         <?php
             require "../php/dbconnection.php";
-            $sql = 'SELECT * FROM music;';
+            $sql = 'SELECT music.*, addBy.login AS "addByLogin", acceptBy.login AS "acceptByLogin" FROM music JOIN users addBy ON music.addBy = addBy.id JOIN users acceptBy ON music.acceptBy = acceptBy.id WHERE acceptBy IS NOT NULL;';
 
             $sql_data = $db -> query($sql);
             
@@ -65,6 +65,8 @@ checkPermission("musicListSite");
                         echo'<p>Liczba wyświetleń: '.$data['viewCount'].'</p>';
                         echo'<p>Like: '.$data['likeCount'].'</p>';
                         echo'<p>Dislike: '.$data['dislikeCount'].'</p>';
+                        echo "<p style='color: coral'>Dodana przez: {$data['addByLogin']}</p>";
+                        echo "<p style='color: #ff9933'>Zaakceptowana przez: {$data['acceptByLogin']}</p>";
                     echo'</div>';
                 echo'</div>';
                 $i++;  
