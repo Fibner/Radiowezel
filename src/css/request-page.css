@@ -1,0 +1,65 @@
+* {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #503f49;
+    color: white;
+}
+
+#menu-section {
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+}
+
+.Pbutton{
+    margin-top: 0.5%;
+    float: right;
+    cursor: pointer;
+    background-color: #8a7f85;
+    color: white;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    border: none;
+    margin-right: 1%;
+    font-size: 15px;
+}
+
+.Wbutton {
+    margin-top: 0.5%;
+    float: right;
+    cursor: pointer;
+    background-color: #8a7f85;
+    color: white;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    border: none;
+    margin-right: 1%;
+    font-size: 15px;
+}
+
+#link-div {
+    margin-top: 10%;
+    text-align: center;
+}
+
+#link-input {
+    margin-top: 5%;
+}
+
+.lin {
+    border: none;
+    background-color: #8a7f85;
+    height: 50px;
+    width: 500px;
+}
+
+.Lbutton {
+    cursor: pointer;
+    background-color: #8a7f85;
+    color: white;
+    width: 200px;
+    height: 50px;
+    border: none;
+    
+}

@@ -29,7 +29,7 @@ class User{
     private function setPermissions()
     {
         $result = self::$dbconn->query("SELECT * FROM permissions WHERE userId = '{$this->id}'")->fetch_assoc();
-        $this->permissions = array('addSongSite'=>(boolean)$result['addSongSite'], 'controlPanelSite'=>(boolean)$result['controlPanelSite'], 'playlistSite'=>(boolean)$result['playlistSite'], 'bannedMusicSite'=>(boolean)$result['bannedMusicSite'], 'historySite'=>(boolean)$result['historySite'], 'musicListSite'=>(boolean)$result['musicListSite'], 'indexSite'=>(boolean)$result['indexSite']);
+        $this->permissions = array('addSongSite'=>(boolean)$result['addSongSite'], 'controlPanelSite'=>(boolean)$result['controlPanelSite'], 'playlistSite'=>(boolean)$result['playlistSite'], 'bannedMusicSite'=>(boolean)$result['bannedMusicSite'], 'historySite'=>(boolean)$result['historySite'], 'musicListSite'=>(boolean)$result['musicListSite'], 'indexSite'=>(boolean)$result['indexSite'], 'requestSite'=>(boolean)$result['requestSite']);
     }
 
     public function getType(){

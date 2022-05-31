@@ -21,9 +21,11 @@ window.onload = function () {
         location.href = "musicList";
     });
     document.querySelectorAll('#history-button')[0].addEventListener("click", function () {
-        console.log("działa");
         location.href = "history";
-    })
+    });
+    document.querySelectorAll('#request-button')[0].addEventListener("click", function () {
+        location.href = "request";
+    });
 
     document.querySelectorAll("#logout-button")[1].addEventListener("click", logOut);
     document.querySelectorAll("#playlist-button")[1].addEventListener("click", function () {
@@ -36,8 +38,10 @@ window.onload = function () {
         location.href = "musicList";
     });
     document.querySelectorAll('#history-button')[1].addEventListener("click", function () {
-        console.log("działa");
         location.href = "history";
+    });
+    document.querySelectorAll('#request-button')[1].addEventListener("click", function () {
+        location.href = "request";
     })
 }
 

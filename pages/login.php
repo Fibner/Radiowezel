@@ -48,7 +48,7 @@ if (isset($_SESSION['user'])) {
             <button id="submit" class="button">ZALOGUJ</button>
         </form>
 
-        <button class="button"><a href="registerPage.php">REJESTRACJA</a></button>
+        <button class="button"><a href="register.php">REJESTRACJA</a></button>
 
     </section>
     <script src="../src/js/jquery-3.6.0.js"></script>

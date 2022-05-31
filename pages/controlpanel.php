@@ -34,6 +34,8 @@ checkPermission('controlPanelSite');
                 <br>
                 <input type="button" class="mobile-menu-button" name="button" id="history-button" value="HISTORIA" />
                 <br>
+                <input type="button" class="mobile-menu-button" name="button" id="request-button" value="PROŚBY" />
+                <br>
                 <input type="button" class="mobile-menu-button" name="button" id="logout-button" value="WYLOGUJ" />
             </div>
         </div>
@@ -50,6 +52,9 @@ checkPermission('controlPanelSite');
         </div>
         <div id="history-div" class="menu-button-div">
             <input type="button" class="Wbutton" name="button" id="history-button" value="HISTORIA" />
+        </div>
+        <div id="request-div" class="menu-button-div">
+            <input type="button" class="Wbutton" name="button" id="request-button" value="PROŚBY" />
         </div>
         <div id="logout-div" class="menu-button-div">
             <input type="button" class="Wbutton" name="button" id="logout-button" value="WYLOGUJ" />

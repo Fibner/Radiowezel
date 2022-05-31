@@ -130,8 +130,16 @@ body {
         padding-right: 5px;
         font-size: 10px;
         text-align: center;
+        margin-top: 0;
     }
     #now-playing{
         padding: 3%;
+    }
+    #main-buttons button{
+        color: black;
+        margin-top: 2%;
+        width: 160px;
+        height: 35px;
+        padding: 0;
     }
 }

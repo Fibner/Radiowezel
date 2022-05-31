@@ -1,3 +1,21 @@
+<?php
+session_start();
+require "../php/Class/User.php";
+
+if (isset($_SESSION['user'])) {
+    switch(unserialize($_SESSION['user'])->getType()){
+        case 1:
+            header("Location: controlpanel");
+            break;
+        case 2:
+            header("Location: ../index");
+            break;
+        case 0:
+            header("Location: addsong");
+            break;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
