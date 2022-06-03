@@ -1,5 +1,7 @@
 <?php
 require_once "../php/checkPermission.php"; //session_start();
+require_once "../php/dbconnection.php";
+require_once "../php/Class/DbRepo.php";
 
 checkPermission("requestSite");
 ?>
@@ -42,7 +44,11 @@ checkPermission("requestSite");
     </div>
 
     <div id="main">
-        
+    <h1>
+        Prośby o dodanie
+    </h1>
+    <div id="request-container">
+    </div>
     </div>
     <script src="../src/js/jquery-3.6.0.js"></script>
     <script type="module" src="../src/js/request-page.js"></script>

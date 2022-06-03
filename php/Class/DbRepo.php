@@ -73,6 +73,47 @@ class DbRepo
         }
         
     }
+    public static function getRequest(){
+        $requests = self::$dbconn->query("SELECT music.id AS musicid, title, link, thumbnail, likeCount, dislikeCount, users.login FROM music LEFT JOIN users ON users.id = music.addBy WHERE acceptBy IS NULL");
+        if($requests->num_rows == 0){
+            echo "Aktualnie nie ma żadnych prośb o dodanie do bazy";
+            return;
+        }
+        $html = "<table> <tr id='table-header'> <th>Lp.</th> <th>Tytuł</th> <th>Like</th> <th>Dislike</th> <th>Prośba od</th> <th>Akcje</th> </tr>";
+        $i = 1;
+        foreach($requests as $item){
+                $html .= "<tr>";
+                    $html .= "<td>";
+                        $html .= "{$i}";
+                    $html .= "</td>";
+                    $html .= "<td>";
+                        $html .= "{$item['title']} <a href='{$item['link']}' target='_blank'>|></a>";
+                    $html .= "</td>";
+                    $html .= "<td>";
+                        $html .= "{$item['likeCount']}";
+                    $html .= "</td>";
+                    $html .= "<td>";
+                        $html .= "{$item['dislikeCount']}";
+                    $html .= "</td>";
+                    $html .= "<td>";
+                        $html .= "{$item['login']}";
+                    $html .= "</td>";
+                    $html .= "<td>";
+                        $html .= "<button class='accept' value='{$item['musicid']}'>+</button><button class='decline' value='{$item['musicid']}'>-</button>";
+                    $html .= "</td>";
+                $html .= "</tr>";
+            $i++;
+        }
+        $html .= "</table>";
+        echo $html;
+    }
+    public static function requestVerdict(int $id, bool $verdict){
+        if($verdict){
+            self::$dbconn->query("UPDATE music SET acceptBy = ".unserialize($_SESSION['user'])->getId()." WHERE id = $id");
+        }else{
+            self::$dbconn->query("DELETE FROM music WHERE id = $id");
+        }
+    }
     public static function removeSong(string $id)
     {
         if (self::$dbconn->query("DELETE FROM `playlist` WHERE musicId = {$id}"));
