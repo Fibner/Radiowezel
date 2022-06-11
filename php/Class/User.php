@@ -28,8 +28,12 @@ class User{
     }
     private function setPermissions()
     {
+        $this->permissions = array();
+        $permissionsSites = self::$dbconn->query("SHOW COLUMNS FROM `permissions` WHERE FIELD NOT LIKE 'id' AND FIELD NOT LIKE 'userId'");
         $result = self::$dbconn->query("SELECT * FROM permissions WHERE userId = '{$this->id}'")->fetch_assoc();
-        $this->permissions = array('addSongSite'=>(boolean)$result['addSongSite'], 'controlPanelSite'=>(boolean)$result['controlPanelSite'], 'playlistSite'=>(boolean)$result['playlistSite'], 'bannedMusicSite'=>(boolean)$result['bannedMusicSite'], 'historySite'=>(boolean)$result['historySite'], 'musicListSite'=>(boolean)$result['musicListSite'], 'indexSite'=>(boolean)$result['indexSite'], 'requestSite'=>(boolean)$result['requestSite']);
+        foreach($permissionsSites as $ps){
+            $this->permissions += [$ps['Field'] => $result[$ps['Field']]];
+        }
     }
 
     public function getType(){

@@ -41,7 +41,7 @@ checkPermission("musicListSite");
         
         <?php
             require "../php/dbconnection.php";
-            $sql = 'SELECT music.*, addBy.login AS "addByLogin", acceptBy.login AS "acceptByLogin" FROM music JOIN users addBy ON music.addBy = addBy.id JOIN users acceptBy ON music.acceptBy = acceptBy.id WHERE acceptBy IS NOT NULL;';
+            $sql = 'SELECT music.*, addBy.login AS "addByLogin", acceptBy.login AS "acceptByLogin" FROM music JOIN users addBy ON music.addBy = addBy.id JOIN users acceptBy ON music.acceptBy = acceptBy.id WHERE acceptBy IS NOT NULL AND acceptBy > 0;';
 
             $sql_data = $db -> query($sql);
             

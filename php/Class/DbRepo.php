@@ -87,7 +87,7 @@ class DbRepo
                         $html .= "{$i}";
                     $html .= "</td>";
                     $html .= "<td>";
-                        $html .= "{$item['title']} <a href='{$item['link']}' target='_blank'>|></a>";
+                        $html .= "{$item['title']} <a style='text-decoration: none; color: grey' href='{$item['link']}' target='_blank'><|zobacz|></a>";
                     $html .= "</td>";
                     $html .= "<td>";
                         $html .= "{$item['likeCount']}";
@@ -107,11 +107,41 @@ class DbRepo
         $html .= "</table>";
         echo $html;
     }
+    public static function getUsers(){
+        $users = self::$dbconn->query("SELECT users.id AS userId, users.login AS userLogin, COUNT(music.id) FROM `users` LEFT JOIN music ON music.addBy = users.id WHERE users.type = 0;");
+        $html = "<table> <tr id='table-header'> <th>Lp.</th> <th>Login</th> <th>Wysłane</th> <th>Zaakceptowane</th> <th>Odrzucone</th> <th>Do weryfikacji</th> </tr>";
+        $i = 1;
+        foreach($users as $item){
+                $html .= "<tr>";
+                    $html .= "<td>";
+                        $html .= "{$i}";
+                    $html .= "</td>";
+                    $html .= "<td>";
+                        $html .= "{$item['userLogin']}";
+                    $html .= "</td>";
+                    $html .= "<td>";
+                        $html .= self::$dbconn->query("SELECT COUNT(music.id) as result FROM `music` WHERE music.addBy = {$item['userId']};")->fetch_assoc()['result'];
+                    $html .= "</td>";
+                    $html .= "<td>";
+                        $html .= self::$dbconn->query("SELECT COUNT(music.id) as result FROM `music` WHERE music.addBy = {$item['userId']} AND music.acceptBy != 0;")->fetch_assoc()['result'];
+                    $html .= "</td>";
+                    $html .= "<td>";
+                        $html .= self::$dbconn->query("SELECT COUNT(music.id) as result FROM `music` WHERE music.addBy = {$item['userId']} AND music.acceptBy = 0;")->fetch_assoc()['result'];
+                    $html .= "</td>";
+                    $html .= "<td>";
+                        $html .= self::$dbconn->query("SELECT COUNT(music.id) as result FROM `music` WHERE music.addBy = {$item['userId']} AND music.acceptBy IS NULL;")->fetch_assoc()['result'];
+                    $html .= "</td>";
+                $html .= "</tr>";
+            $i++;
+        }
+        $html .= "</table>";
+        echo $html;
+    }
     public static function requestVerdict(int $id, bool $verdict){
         if($verdict){
             self::$dbconn->query("UPDATE music SET acceptBy = ".unserialize($_SESSION['user'])->getId()." WHERE id = $id");
         }else{
-            self::$dbconn->query("DELETE FROM music WHERE id = $id");
+            self::$dbconn->query("UPDATE music SET acceptBy = 0 WHERE id = $id");
         }
     }
     public static function removeSong(string $id)

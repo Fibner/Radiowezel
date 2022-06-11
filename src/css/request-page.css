@@ -95,4 +95,13 @@ img {
     float: right;
     width:30%;
     height:auto;
- }
+}
+button{
+    cursor: pointer;
+}
+.accept:hover{
+    background-color: green;
+}
+.decline:hover{
+    background-color: red;
+}

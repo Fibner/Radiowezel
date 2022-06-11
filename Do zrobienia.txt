@@ -2,4 +2,3 @@
 - zeby piosenki nie szły za często
 - tworzenie konta
 - ustawienia konta
-- przerobic skrypt z uprawnieniamy zeby byl dynamiczny

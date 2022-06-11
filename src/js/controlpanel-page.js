@@ -26,6 +26,9 @@ window.onload = function () {
     document.querySelectorAll('#request-button')[0].addEventListener("click", function () {
         location.href = "request";
     });
+    document.querySelectorAll('#users-button')[0].addEventListener("click", function () {
+        location.href = "userslist";
+    })
 
     document.querySelectorAll("#logout-button")[1].addEventListener("click", logOut);
     document.querySelectorAll("#playlist-button")[1].addEventListener("click", function () {
@@ -42,6 +45,9 @@ window.onload = function () {
     });
     document.querySelectorAll('#request-button')[1].addEventListener("click", function () {
         location.href = "request";
+    })
+    document.querySelectorAll('#users-button')[1].addEventListener("click", function () {
+        location.href = "userslist";
     })
 }
 

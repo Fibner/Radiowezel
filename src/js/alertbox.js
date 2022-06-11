@@ -19,7 +19,7 @@ function alertbox(type,textmessage){
             break;
     }
     background.style.cssText = "position: absolute;z-index:10;top:-40%;left:0%;width:100%;height:100%;opacity:0;text-align:center;background-color: transparent;"
-    main.style.cssText = 'position:relative;width:25%;height:55%;background:gray;left:35%;top:20%;text-align:center;border-radius: 30px;';
+    main.style.cssText = 'position:relative;width:20%;height:50%;background:gray;margin-left: auto;margin-right: auto;top:20%;text-align:center;border-radius:30px;line-height:25px;padding-left:15px;padding-right:15px;';
     icon.style.cssText = 'margin:20px;background:gray;';
     background.id = "alertbox"
     document.body.appendChild(background);

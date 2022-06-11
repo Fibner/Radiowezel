@@ -1,3 +1,3 @@
 <?php
 
-echo password_hash("niedlapsakiełbasa", NULL);
+echo password_hash("text", NULL);

@@ -53,7 +53,7 @@ checkPermission("playlistSite");
             <?php
                 require "../php/dbconnection.php";
 
-                $sql = "SELECT id,title,thumbnail FROM music;";
+                $sql = "SELECT id,title,thumbnail FROM music WHERE acceptBy IS NOT NULL AND acceptBy > 0;";
                 $sql2 ="SELECT musicId FROM playlist;";
 
                 $sql_data = $db -> query($sql);
@@ -82,7 +82,7 @@ checkPermission("playlistSite");
             <h1>PLAYLISTA</h1>
             <?php
                 require "../php/dbconnection.php";
-                $sql = "SELECT music.id ,title,thumbnail FROM music INNER JOIN playlist ON music.id = playlist.musicId;";
+                $sql = "SELECT music.id, title, thumbnail FROM music INNER JOIN playlist ON music.id = playlist.musicId;";
                 $sql_data = $db -> query($sql);
 
                 foreach($sql_data as $data){
